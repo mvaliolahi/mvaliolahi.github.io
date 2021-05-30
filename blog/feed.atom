@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>CleanCasts</title>
+    <link href="https://my-jigsaw-blog.com/blog" />
+    <link type="application/atom+xml" rel="self" href="https://my-jigsaw-blog.com/blog/feed.atom" />
+    <updated>2021-05-30T14:06:41+00:00</updated>
+    <id>https://my-jigsaw-blog.com/blog/feed.atom</id>
+    <author>
+        <name>Meysam Valiolahi</name>
+    </author>
+                <entry>
+    <id>https://my-jigsaw-blog.com/blog/git-tips</id>
+    <link type="text/html" rel="alternate" href="https://my-jigsaw-blog.com/blog/git-tips" />
+    <title>ترفندهای Git</title>
+    <published>2021-05-29T00:00:00+00:00</published>
+    <updated>2021-05-29T00:00:00+00:00</updated>
+    <author>
+        <name>میثم ولی اللهی</name>
+    </author>
+    <summary type="html">آشنایی با برخی دستورات پرکاربرد git...</summary>
+    <content type="html"><![CDATA[
+        <h4>جستجوی پیغام کامیت</h4>
+
+<pre><code class="language-bash">$ git log --grep "the commit message"
+</code></pre>
+
+<h4>جستجوی خط</h4>
+
+<pre><code class="language-bash">$ git grep "protected ServiceContainer $serviceContainer;"
+</code></pre>
+
+<h4>نمایش برنچ‌های مرج شده / نشده</h4>
+
+<pre><code class="language-bash">$ git branch --merged master
+$ git branch --no-merged
+</code></pre>
+
+<h4>حذف تمام برنچ های مرج شده</h4>
+
+<pre><code class="language-bash">$ git branch --merged master | xargs -n 1 git branch -d
+</code></pre>
+
+<h4>نمایش کامیت هایی که در برچ جاری هست ولی در مستر وجود ندارد</h4>
+
+<pre><code class="language-bash">$ git log master.. --oneline
+</code></pre>
+
+<h4>نمایش فایل های تغییر داده شده بین دو برنچ</h4>
+
+<pre><code class="language-bash"> # with current branch
+ $ git diff --name-status master
+
+ $ git diff --name-status first-branch..your-branch
+ $ git diff --stat --color master..your-branch
+</code></pre>
+
+<h4>نمایش فایل هایی که در کامیت‌ها تغییر کرده</h4>
+
+<pre><code class="language-bash">$ git whatchanged
+$ git whatchanged -p #show with file change log
+$ git whatchanged -m -n 1 -p &lt;commit-id&gt;
+$ git diff-tree --no-commit-id --name-only -r &lt;commit-ish&gt;
+$ git whatchanged --since='2 weeks ago'
+</code></pre>
+
+<h4>نمایش تفاوت فایل با برنچ دیگر</h4>
+
+<pre><code class="language-bash">$ git diff master file.extetion
+</code></pre>
+
+<h4>دور انداتن تغییرات لوکال</h4>
+
+<pre><code class="language-bash">$ git add . &amp;&amp; git checkout -f
+</code></pre>
+
+<h4>نمایش تغییرات کامیت</h4>
+
+<pre><code class="language-bash">$ git show &lt;commit-id&gt;   
+$ git diff-tree -p &lt;commit-id&gt; 
+</code></pre>
+
+<h4>نمایش کامیت های یک فایل خاص</h4>
+
+<pre><code class="language-bash">$ git log --follow --oneline config/auth.php
+$ git log --follow --oneline -p config/auth.php
+$ git log --all --full-history -- "**/thefile.*"
+</code></pre>
+
+<h4>بازیابی فایل حذف شده از کامیت</h4>
+
+<pre><code class="language-bash">$ git checkout &lt;SHA&gt;^ -- &lt;path-to-file&gt;"
+</code></pre>
+
+<h4>دورانداختن بعضی از تغییرات از فایل  / استیج</h4>
+
+<pre><code class="language-bash">$ git checkout -p file-name
+</code></pre>
+
+<h4>حذف فایل کامیت شده</h4>
+
+<pre><code class="language-bash">$ git rm --cached file-name
+</code></pre>
+
+<h4>ذخیره و بازیابی تغییرات</h4>
+
+<pre><code class="language-bash">$ git stash save "name"
+$ git stash list
+$ git stash pop 1  #1 is number of stash
+$ git stash apply 3
+$ git stash show -p &lt;stash@{n}&gt;
+$ git stash clear
+</code></pre>
+
+<h4>لیست تمام فایل های تا زمان کامیت</h4>
+
+<pre><code class="language-bash">$ git ls-tree --name-only -r &lt;commit-ish&gt;
+</code></pre>
+
+<h4>لیست تمام فایل های کانفلیکت خورده</h4>
+
+<pre><code class="language-bash">$ git diff --name-only --diff-filter=U
+</code></pre>
+
+<h4>سویچ سریع به برنچ قبلی</h4>
+
+<pre><code class="language-bash">$ git checkout -
+</code></pre>
+
+<h4>تغییر آدرس ریموت</h4>
+
+<pre><code class="language-bash">$ git remote set-url origin &lt;URL&gt;
+</code></pre>
+
+<h4>استیج کردن قسمتی از تغییرات بجای کل فایل</h4>
+
+<pre><code class="language-bash">$ git add -p
+</code></pre>
+
+<h4>لیست فایلهای پیگیری شده/ نشده</h4>
+
+<pre><code class="language-bash">$ git ls-files -t
+$ git ls-files --others
+</code></pre>
+
+<h4>نمایش تمام فایل های ignore شده</h4>
+
+<pre><code class="language-bash">$ git ls-files --others -i --exclude-standard
+</code></pre>
+
+<h4>نمایش تمام برنچ هایی که کامیت مورد نظر را دارند</h4>
+
+<pre><code class="language-bash">$ git branch --contains &lt;commit-ish&gt;
+</code></pre>
+
+<h4>نمایش کامیت ها بصورت گروه بندی بر اساس کاربر</h4>
+
+<pre><code class="language-bash">$ git shortlog
+</code></pre>
+    ]]></content>
+</entry>
+    </feed>
