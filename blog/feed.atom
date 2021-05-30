@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>CleanCasts</title>
-    <link href="https://my-jigsaw-blog.com/blog" />
-    <link type="application/atom+xml" rel="self" href="https://my-jigsaw-blog.com/blog/feed.atom" />
-    <updated>2021-05-30T14:06:41+00:00</updated>
-    <id>https://my-jigsaw-blog.com/blog/feed.atom</id>
+    <link href="https://mvaliolahi.github.io/blog" />
+    <link type="application/atom+xml" rel="self" href="https://mvaliolahi.github.io/blog/feed.atom" />
+    <updated>2021-05-30T14:20:00+00:00</updated>
+    <id>https://mvaliolahi.github.io/blog/feed.atom</id>
     <author>
         <name>Meysam Valiolahi</name>
     </author>
                 <entry>
-    <id>https://my-jigsaw-blog.com/blog/git-tips</id>
-    <link type="text/html" rel="alternate" href="https://my-jigsaw-blog.com/blog/git-tips" />
+    <id>https://mvaliolahi.github.io/blog/git-tips</id>
+    <link type="text/html" rel="alternate" href="https://mvaliolahi.github.io/blog/git-tips" />
     <title>ترفندهای Git</title>
     <published>2021-05-29T00:00:00+00:00</published>
     <updated>2021-05-29T00:00:00+00:00</updated>
