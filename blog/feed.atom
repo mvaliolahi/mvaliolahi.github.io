@@ -3,12 +3,57 @@
     <title>CleanCasts</title>
     <link href="https://mvaliolahi.github.io/blog" />
     <link type="application/atom+xml" rel="self" href="https://mvaliolahi.github.io/blog/feed.atom" />
-    <updated>2021-05-30T14:20:00+00:00</updated>
+    <updated>2021-05-31T07:03:25+00:00</updated>
     <id>https://mvaliolahi.github.io/blog/feed.atom</id>
     <author>
         <name>Meysam Valiolahi</name>
     </author>
                 <entry>
+    <id>https://mvaliolahi.github.io/blog/mysql-backup-restore</id>
+    <link type="text/html" rel="alternate" href="https://mvaliolahi.github.io/blog/mysql-backup-restore" />
+    <title>MySQL Backup / Restore</title>
+    <published>2021-05-31T00:00:00+00:00</published>
+    <updated>2021-05-31T00:00:00+00:00</updated>
+    <author>
+        <name>میثم ولی اللهی</name>
+    </author>
+    <summary type="html">نصب ابزار pv
+
+
+
+
+
+پشتیبان گیری از دیتابیس
+
+
+
+
+
+بازیابی دیتابیس...</summary>
+    <content type="html"><![CDATA[
+        <ol>
+<li>نصب ابزار pv</li>
+</ol>
+
+<pre><code class="language-bash">$ sudo apt install pv
+</code></pre>
+
+<ol start="2">
+<li>پشتیبان گیری از دیتابیس</li>
+</ol>
+
+<pre><code class="language-bash">$ mysqldump -uroot -p  database-name --opt | pv -W | gzip  &gt; database-name.gz
+</code></pre>
+
+<ol start="3">
+<li>بازیابی دیتابیس</li>
+</ol>
+
+<pre><code class="language-bash">$ pv cleancasts.sql | mysql -uroot -p123456 cleancasts
+</code></pre>
+    ]]></content>
+</entry>
+            <entry>
     <id>https://mvaliolahi.github.io/blog/git-tips</id>
     <link type="text/html" rel="alternate" href="https://mvaliolahi.github.io/blog/git-tips" />
     <title>ترفندهای Git</title>

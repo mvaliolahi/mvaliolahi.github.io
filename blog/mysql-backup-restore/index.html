@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="Get in touch with us">
+    <meta name="description" content="بک آپ گیری و بازیابی دیتابیس  در مای اس کیو ال">
 
-    <meta property="og:title" content="Contact | CleanCasts" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mvaliolahi.github.io/contact" />
-    <meta property="og:description" content="Get in touch with us" />
+    <meta property="og:title" content="MySQL Backup / Restore | CleanCasts" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mvaliolahi.github.io/blog/mysql-backup-restore" />
+    <meta property="og:description" content="بک آپ گیری و بازیابی دیتابیس  در مای اس کیو ال" />
 
-    <title>Contact | CleanCasts</title>
+    <title>MySQL Backup / Restore | CleanCasts</title>
 
     <link rel="home" href="https://mvaliolahi.github.io/">
     <link rel="icon" href="/favicon.ico" >
@@ -117,75 +117,66 @@
             <a
                 title="CleanCasts Contact"
                 href="/contact"
-                class="nav-menu__item hover:text-blue-500 active text-blue"
+                class="nav-menu__item hover:text-blue-500 "
             >ارتباط باما</a>
         </li>
     </ul>
 </nav>
 
     <main role="main" class="flex-auto w-full container max-w-4xl mx-auto py-16 px-6" style="direction: rtl">
-        <h1>Contact</h1>
+        <img src="/assets/images/mysql.png" alt="MySQL Backup / Restore cover image" class="mb-2">
 
-<p class="mb-8">
-    Static sites are unable to handle form submissions. However, there are third-party services, like Tighten’s <a href="https://fieldgoal.io" title="FieldGoal">FieldGoal</a>, which can accept the form submission, email you the result, and redirect back to a thank you page.
-</p>
+<h1 class="leading-none mb-2">MySQL Backup / Restore</h1>
 
-<form action="/contact" class="mb-12">
-    <div class="flex flex-wrap mb-6 -mx-3">
-        <div class="w-full md:w-1/2 mb-6 md:mb-0 px-3">
-            <label class="block mb-2 text-gray-800 text-sm font-semibold" for="contact-name">
-                Name
-            </label>
-
-            <input
-                type="text"
-                id="contact-name"
-                placeholder="Jane Doe"
-                name="name"
-                class="block w-full border shadow rounded-lg outline-none mb-2 px-4 py-3"
-                required
-            >
-        </div>
-
-        <div class="w-full px-3 md:w-1/2">
-            <label class="block text-gray-800 text-sm font-semibold mb-2" for="contact-email">
-                Email Address
-            </label>
-
-            <input
-                type="email"
-                id="contact-email"
-                placeholder="email@domain.com"
-                name="email"
-                class="block w-full border shadow rounded-lg outline-none mb-2 px-4 py-3"
-                required
-            >
-        </div>
+<div class="flex justify-between">
+    
+    <div>
+        <p class="text-gray-700 text-xl md:mt-0">میثم ولی اللهی</p>
     </div>
-
-    <div class="w-full mb-12">
-        <label class="block text-gray-800 text-sm font-semibold mb-2" for="contact-message">
-            Message
-        </label>
-
-        <textarea
-            id="contact-message"
-            rows="4"
-            name="message"
-            class="block w-full border shadow rounded-lg outline-none appearance-none mb-2 px-4 py-3"
-            placeholder="A lovely message here."
-            required
-        ></textarea>
+    
+    <div>
+        <p class="text-gray-700 text-xl md:mt-0"> 7 ساعت پیش</p>
     </div>
+</div>
 
-    <div class="flex justify-end w-full">
-        <input
-            type="submit"
-            value="Submit"
-            class="block bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold leading-snug tracking-wide uppercase shadow rounded-lg cursor-pointer px-6 py-3"
-        >
-    </div>
-</form>
+<a href="/blog/categories/mysql" title="View posts in mysql"
+    class="inline-block bg-gray-300 hover:bg-blue-200 leading-loose tracking-wide text-gray-800 uppercase text-xs font-semibold rounded mr-4 px-3 pt-px">
+    mysql
+</a>
+
+<div class="border-b border-blue-200 mb-10 pb-4" v-pre>
+    <ol>
+<li>نصب ابزار pv</li>
+</ol>
+
+<pre><code class="language-bash">$ sudo apt install pv
+</code></pre>
+
+<ol start="2">
+<li>پشتیبان گیری از دیتابیس</li>
+</ol>
+
+<pre><code class="language-bash">$ mysqldump -uroot -p  database-name --opt | pv -W | gzip  &gt; database-name.gz
+</code></pre>
+
+<ol start="3">
+<li>بازیابی دیتابیس</li>
+</ol>
+
+<pre><code class="language-bash">$ pv cleancasts.sql | mysql -uroot -p123456 cleancasts
+</code></pre>
+</div>
+
+<nav class="flex justify-between text-sm md:text-base">
+    <div>
+                <a href="https://mvaliolahi.github.io/blog/git-tips" title="Older Post: ترفندهای Git">
+            &LeftArrow; ترفندهای Git
+        </a>
+            </div>
+
+    <div>
+            </div>
+</nav>
     </main>
 
     <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
