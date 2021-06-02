@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>CleanCasts</title>
-    <link href="https://mvaliolahi.github.io/blog" />
-    <link type="application/atom+xml" rel="self" href="https://mvaliolahi.github.io/blog/feed.atom" />
-    <updated>2021-05-31T07:03:25+00:00</updated>
-    <id>https://mvaliolahi.github.io/blog/feed.atom</id>
+    <link href="https://cleancasts.ir/blog" />
+    <link type="application/atom+xml" rel="self" href="https://cleancasts.ir/blog/feed.atom" />
+    <updated>2021-06-02T11:09:31+00:00</updated>
+    <id>https://cleancasts.ir/blog/feed.atom</id>
     <author>
         <name>Meysam Valiolahi</name>
     </author>
                 <entry>
-    <id>https://mvaliolahi.github.io/blog/mysql-backup-restore</id>
-    <link type="text/html" rel="alternate" href="https://mvaliolahi.github.io/blog/mysql-backup-restore" />
+    <id>https://cleancasts.ir/blog/mysql-backup-restore</id>
+    <link type="text/html" rel="alternate" href="https://cleancasts.ir/blog/mysql-backup-restore" />
     <title>MySQL Backup / Restore</title>
     <published>2021-05-31T00:00:00+00:00</published>
     <updated>2021-05-31T00:00:00+00:00</updated>
@@ -54,8 +54,8 @@
     ]]></content>
 </entry>
             <entry>
-    <id>https://mvaliolahi.github.io/blog/git-tips</id>
-    <link type="text/html" rel="alternate" href="https://mvaliolahi.github.io/blog/git-tips" />
+    <id>https://cleancasts.ir/blog/git-tips</id>
+    <link type="text/html" rel="alternate" href="https://cleancasts.ir/blog/git-tips" />
     <title>ترفندهای Git</title>
     <published>2021-05-29T00:00:00+00:00</published>
     <updated>2021-05-29T00:00:00+00:00</updated>
