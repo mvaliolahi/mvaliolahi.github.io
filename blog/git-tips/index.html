@@ -135,7 +135,7 @@
     </div>
     
     <div>
-        <p class="text-gray-700 text-xl md:mt-0"> 4 روز پیش</p>
+        <p class="text-gray-700 text-xl md:mt-0"> 5 روز پیش</p>
     </div>
 </div>
 
@@ -281,6 +281,12 @@ $ git ls-files --others
 <h4>نمایش کامیت ها بصورت گروه بندی بر اساس کاربر</h4>
 
 <pre><code class="language-bash">$ git shortlog
+</code></pre>
+
+<h4>پوش کردن Subtree در Repository دیگر</h4>
+
+<pre><code class="language-bash">$ git remote add -f cleancasts.ir git@github.com:url/repo.git
+$ git subtree push --prefix=build cleancasts.ir master
 </code></pre>
 </div>
 

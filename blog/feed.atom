@@ -3,7 +3,7 @@
     <title>CleanCasts</title>
     <link href="https://cleancasts.ir/blog" />
     <link type="application/atom+xml" rel="self" href="https://cleancasts.ir/blog/feed.atom" />
-    <updated>2021-06-02T11:10:57+00:00</updated>
+    <updated>2021-06-02T12:14:31+00:00</updated>
     <id>https://cleancasts.ir/blog/feed.atom</id>
     <author>
         <name>Meysam Valiolahi</name>
@@ -200,6 +200,12 @@ $ git ls-files --others
 <h4>نمایش کامیت ها بصورت گروه بندی بر اساس کاربر</h4>
 
 <pre><code class="language-bash">$ git shortlog
+</code></pre>
+
+<h4>پوش کردن Subtree در Repository دیگر</h4>
+
+<pre><code class="language-bash">$ git remote add -f cleancasts.ir git@github.com:url/repo.git
+$ git subtree push --prefix=build cleancasts.ir master
 </code></pre>
     ]]></content>
 </entry>
