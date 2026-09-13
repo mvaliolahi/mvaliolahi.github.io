@@ -615,11 +615,15 @@ body.fa .stripe-head h2 {
 .work-index a {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) auto;
-  align-items: center;
+  align-items: start;
   gap: var(--s4);
   padding: var(--s4) var(--s4);
   text-decoration: none;
   border-radius: var(--r-hand-soft);
+}
+
+.work-index .when {
+  padding-top: 5px;
 }
 
 .work-index li + li {
