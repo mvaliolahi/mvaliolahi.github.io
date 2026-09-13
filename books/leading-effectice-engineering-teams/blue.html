@@ -1,56 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>روش پرداخت</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @font-face {
-      font-family: 'Yekan';
-      src: url('../../assets/fonts/Yekan.woff') format('woff'),
-           url('../../assets/fonts/Yekan.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-    body {
-      font-family: Yekan, sans-serif;
-      background-color: #f9fafb;
-    }
-  </style>
-</head>
-<body class="flex items-center justify-center min-h-screen p-4">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>خرید نسخه فارسی کتاب | رهبری تیم‌های مهندسی اثربخش</title>
+    <meta
+      name="description"
+      content="روش‌های خرید نسخه PDF فارسی کتاب رهبری تیم‌های مهندسی اثربخش و دریافت فایل از طریق تلگرام."
+    />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="stylesheet" href="../../assets/site.css" />
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class="fa status-page">
+    <a class="skip" href="#main">رفتن به محتوای اصلی</a>
+    <header class="site-header">
+      <a class="wordmark" href="../../">میثم ولی‌اللهی<span>.</span></a>
+      <nav class="site-nav" aria-label="راهبری اصلی">
+        <a href="./">بازگشت به معرفی کتاب ←</a>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="wrap">
+        <section class="purchase wobble" aria-labelledby="purchase-title">
+          <p class="eyebrow">نسخه فارسی · PDF · ۳۱۷ صفحه</p>
+          <h1 id="purchase-title">رهبری تیم‌های<br />مهندسی اثربخش</h1>
+          <p class="price">۲۱۰٬۰۰۰ <small>تومان</small> <del>۳۰۰٬۰۰۰</del></p>
+          <p>
+            پس از پرداخت، رسید را در تلگرام ارسال کنید تا فایل کتاب برایتان
+            فرستاده شود.
+          </p>
 
-  <div class="bg-white shadow-lg rounded-2xl p-6 max-w-md w-full text-center border border-gray-200">
+          <section class="payment-block" aria-labelledby="card-title">
+            <h2 id="card-title">۱. پرداخت مستقیم</h2>
+            <p>مبلغ ۲۱۰٬۰۰۰ تومان را به شماره کارت زیر واریز کنید:</p>
+            <bdi class="account">6219-8619-4036-4960</bdi>
+            <details>
+              <summary>پرداخت با کد QR بلوبانک</summary>
+              <img
+                class="qr"
+                src="images/qrcode.jpg"
+                width="1080"
+                height="1197"
+                alt="کد QR بلوبانک برای پرداخت به مترجم"
+                loading="lazy"
+              />
+              <p>
+                پیش از تأیید انتقال، مبلغ و مشخصات مقصد را در برنامه بانکی بررسی
+                کنید.
+              </p>
+            </details>
+          </section>
 
-    <p class="text-gray-700 leading-7 mb-4">
-  💡   قیمت ویژه: ۲۱۰,۰۰۰ تومان <span class="line-through">( ۳۰۰,۰۰۰)</span>
-    </p>
+          <section class="payment-block" aria-labelledby="delivery-title">
+            <h2 id="delivery-title">۲. ارسال رسید و دریافت کتاب</h2>
+            <p>
+              تصویر فیش یا رسید پرداخت را به
+              <a href="https://t.me/m_valiolahi"><bdi>@m_valiolahi</bdi></a> در
+              تلگرام بفرستید. فایل PDF پس از بررسی رسید، در همان گفتگو برایتان
+              ارسال می‌شود.
+            </p>
+            <div class="actions">
+              <a class="button" href="https://t.me/m_valiolahi">ارسال رسید در تلگرام ↗</a>
+            </div>
+          </section>
 
-
-    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4 text-sm text-right">
-      <p class="mb-2 font-semibold">💳 کارت به کارت:</p>
-      <p class="text-gray-800">مبلغ <span class="font-bold text-green-600">۲۱۰,۰۰۰ تومان <span class="line-through">( ۳۰۰,۰۰۰)</span></span> را به شماره کارت زیر واریز کنید:</p>
-      <p class="font-mono text-lg text-blue-600 mt-2 text-center">6219-8619-4036-4960</p>
-    </div>
-
-    <div class="mb-4">
-      <p class="mb-2 font-semibold text-sm text-gray-700">📷 یا اسکن کد QR بلوبانک:</p>
-        <img src="./images/qrcode.jpg" alt="QR Code بلوبانک" class="w-full mx-auto rounded-lg shadow" />
-    </div>
-
-    <p class="text-gray-700 text-sm leading-6 mb-4">
-      بعد از واریز، تصویر فیش یا رسید را به آیدی تلگرام زیر ارسال کنید:<br />
-      <a href="https://t.me/m_valiolahi" target="_blank" class="text-blue-500 hover:underline">@m_valiolahi</a><br />
-      فایل خریداری‌شده بلافاصله برایتان ارسال خواهد شد.
-    </p>
-
-    <div class="mt-4">
-      <a href="https://t.me/m_valiolahi" target="_blank" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition">
-        ارسال فیش در تلگرام
-      </a>
-    </div>
-  </div>
-
-</body>
+          <section class="payment-block" aria-labelledby="gateway-title">
+            <h2 id="gateway-title">پرداخت از طریق درگاه</h2>
+            <p>
+              در صورت تمایل می‌توانید از لینک پرداخت زرین‌پال استفاده کنید. مبلغ
+              نمایش‌داده‌شده در درگاه را پیش از تأیید بررسی کنید و رسید را برای
+              دریافت فایل نگه دارید.
+            </p>
+            <div class="actions">
+              <a class="button button--ghost" href="https://zarinp.al/711547">رفتن به زرین‌پال ↗</a>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <a href="./">بازگشت به معرفی کتاب ←</a>
+      <a href="https://t.me/m_valiolahi">پشتیبانی در تلگرام ↗</a>
+    </footer>
+  </body>
 </html>
