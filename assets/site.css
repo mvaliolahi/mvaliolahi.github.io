@@ -71,10 +71,14 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--s4);
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  -webkit-tap-highlight-color: transparent;
   background: var(--paper);
   background-image: radial-gradient(
     circle at 1px 1px,
@@ -1192,11 +1196,15 @@ body.fa .price {
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
+    gap: var(--s8);
     padding-block: var(--s8) var(--s12);
   }
   .hero-figure {
-    max-width: 420px;
+    max-width: 380px;
     margin-inline: auto;
+  }
+  .stripe {
+    padding-block: var(--s16);
   }
   .section-grid {
     grid-template-columns: 1fr;
@@ -1225,33 +1233,199 @@ body.fa .price {
   .site-footer {
     width: calc(100% - var(--s8));
   }
+
+  /* header: stack wordmark above a touch-friendly nav */
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s2);
+    padding-block: var(--s3);
+  }
+  .wordmark {
+    font-size: 20px;
+  }
+  body.fa .wordmark {
+    font-size: 18px;
+  }
+  .wordmark span {
+    font-size: 27px;
+  }
+  .site-nav {
+    gap: var(--s1) var(--s2);
+  }
+  .site-nav a {
+    padding: 7px 14px;
+    font-size: 14px;
+  }
+  body.fa .site-nav a {
+    font-size: 14.5px;
+  }
+
+  /* hero: tighter scale, annotation below the drawing */
+  .hero {
+    padding-block: var(--s6) var(--s8);
+  }
+  .hero h1 {
+    font-size: clamp(34px, 11vw, 44px);
+  }
+  body.fa .hero h1 {
+    font-size: clamp(27px, 8.6vw, 36px);
+  }
+  .hero .lead {
+    font-size: 17.5px;
+  }
+  body.fa .hero .lead {
+    font-size: 16px;
+  }
+  .sticker {
+    font-size: 12.5px;
+    padding: 2px 11px;
+  }
+  body.fa .sticker {
+    font-size: 13px;
+  }
+  .hero-figure {
+    max-width: 320px;
+  }
+  .hero-hint {
+    position: static;
+    margin-top: var(--s3);
+    max-width: none;
+    text-align: center;
+  }
+
+  /* sections */
+  .stripe {
+    padding-block: var(--s12);
+  }
+  .stripe-head h2 {
+    font-size: 25px;
+  }
+  body.fa .stripe-head h2 {
+    font-size: 23px;
+  }
+  .page-head {
+    padding-block: var(--s8) var(--s6);
+  }
+  .page-head h1 {
+    font-size: clamp(29px, 9vw, 38px);
+  }
+  body.fa .page-head h1 {
+    font-size: clamp(25px, 7.6vw, 32px);
+  }
+  .page-head .intro {
+    font-size: 16.5px;
+  }
+
+  /* work index */
+  .work-index a {
+    grid-template-columns: 1fr auto;
+    padding: var(--s3) var(--s1);
+  }
+  .work-index h3 {
+    font-size: 19px;
+  }
+  .work-index .when {
+    font-size: 12px;
+    justify-self: end;
+  }
+
+  /* experience chapters */
+  .chapter {
+    padding: var(--s6) var(--s4);
+    margin-bottom: var(--s4);
+  }
+  .chapter-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .chapter-head h2 {
+    font-size: 24px;
+  }
+  body.fa .chapter-head h2 {
+    font-size: 22px;
+  }
+  .chapter-head .role {
+    font-size: 17px;
+  }
+  .chapter .dates {
+    font-size: 12px;
+  }
+  .wins li {
+    font-size: 15.5px;
+    padding-inline-start: 27px;
+  }
+  .polaroid {
+    max-width: 260px !important;
+    margin-top: var(--s8) !important;
+  }
+  .earlier {
+    margin-top: var(--s8);
+  }
+
+  /* principles */
+  .principle {
+    grid-template-columns: 46px minmax(0, 1fr);
+    padding-block: var(--s6);
+  }
+  .principle .number {
+    width: 44px;
+    height: 44px;
+    font-size: 19px;
+  }
+
+  /* books */
   .book-feature,
   .book-teaser {
     grid-template-columns: 1fr;
+    padding: var(--s4);
   }
   .book-feature .cover,
   .book-teaser .cover {
-    max-width: 180px;
+    max-width: 160px;
   }
-  .work-index a {
-    grid-template-columns: 1fr auto;
+  .book-feature h2 {
+    font-size: 23px;
   }
-  .work-index .what {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-  .earlier li {
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
-  .earlier .dates {
-    grid-row: 1;
-  }
-  .chapter {
-    padding: var(--s6);
-  }
+
+  /* purchase & status */
   .purchase {
-    padding: var(--s6);
+    padding: var(--s6) var(--s4);
+    margin-block: var(--s8);
+  }
+  .purchase h1 {
+    font-size: clamp(23px, 6.4vw, 28px);
+  }
+  .price {
+    font-size: 28px;
+  }
+  .price small,
+  .price del {
+    font-size: 15px;
+  }
+  .payment-block h2 {
+    font-size: 19px;
+  }
+  .account {
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    padding: var(--s3) var(--s2);
+  }
+  .qr {
+    width: 160px;
+  }
+  .purchase .actions .button,
+  .hero-actions .button {
+    flex: 1 1 auto;
+  }
+
+  /* footer */
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s2);
+    padding-block: var(--s6) var(--s12);
   }
 }
 
