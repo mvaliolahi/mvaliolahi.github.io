@@ -1784,12 +1784,146 @@ body.fa .lesson-box {
   }
 }
 
+/* ==========================================================================
+   motion layer — CSS only, progressively enhanced
+   Time-based entrance effects run everywhere; scroll-driven effects live
+   inside @supports (animation-timeline: view()) so browsers without them
+   render a fully static site. Reduced-motion users get everything off.
+   ========================================================================== */
+
+/* hero entrance: one orchestrated fade-and-rise on load */
+.hero-copy > * {
+  animation: hero-rise 0.7s ease-out backwards;
+}
+.hero-copy > *:nth-child(2) { animation-delay: 80ms; }
+.hero-copy > *:nth-child(3) { animation-delay: 160ms; }
+.hero-copy > *:nth-child(4) { animation-delay: 240ms; }
+.hero-copy > *:nth-child(5) { animation-delay: 320ms; }
+.hero-copy > *:nth-child(6) { animation-delay: 400ms; }
+
+.hero-figure {
+  animation: hero-rise 0.9s ease-out 0.15s backwards;
+}
+
+/* svg draw-on: strokes trace themselves once, leaves settle in after */
+.hero-figure svg [data-draw] {
+  stroke-dasharray: 400;
+  animation: draw-stroke 1.6s ease-out 0.4s backwards;
+}
+
+.hero-figure svg .leaf {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: leaf-in 0.8s ease-out 1.7s backwards;
+}
+
+/* micro-interactions */
+.button,
+.work-index a,
+.essay-index a {
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+    color 0.18s ease, transform 0.18s ease;
+}
+.button:hover {
+  transform: translateY(-1px);
+}
+.button:active {
+  transform: translateY(0);
+}
+
+@supports (animation-timeline: view()) {
+  /* reading progress: brass hairline along the top of essay pages */
+  .essay::before {
+    content: "";
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--pomegranate), var(--turmeric));
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    animation: progress-grow linear both;
+    animation-timeline: view();
+    z-index: 60;
+    pointer-events: none;
+  }
+
+  [dir="rtl"] .essay::before {
+    transform-origin: 100% 50%;
+  }
+
+  /* scroll reveals: content rises in as each unit enters the viewport;
+     section backgrounds stay still, so nothing large ever fades wholesale */
+  .page-head,
+  .stripe-head,
+  .chapter,
+  .principle,
+  .work-index li,
+  .essay-index li,
+  .book-feature,
+  .decision,
+  .pull-quote,
+  .lesson-box,
+  .compare > div {
+    animation: reveal-rise both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 50%;
+  }
+}
+
+@keyframes progress-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes draw-stroke {
+  from { stroke-dashoffset: 400; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes leaf-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     scroll-behavior: auto !important;
     transition: none !important;
+    animation: none !important;
+  }
+  .essay::before {
+    display: none;
   }
 }
 

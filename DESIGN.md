@@ -69,9 +69,24 @@ fills use palette washes. No stock imagery, no generated art, no gradients.
 
 ## 7. Motion & interaction
 
-Native anchors and disclosure only. Buttons transition background color on
-hover/active. Reduced-motion users get transitions disabled; everything else
-works unchanged. No scroll interception, no decorative animation.
+CSS-only, progressively enhanced — no JavaScript anywhere.
+
+- **Hero entrance**: one orchestrated fade-and-rise on load; the org-chart
+  strokes trace themselves (`data-draw` stroke-dashoffset), then the leaves
+  settle in. Runs once, ~2s total, time-based.
+- **Scroll reveals**: page heads, section headers, chapters, principles,
+  index rows, and callout cards rise in as they enter the viewport via
+  `animation-timeline: view()` — gated behind
+  `@supports (animation-timeline: view())` so unsupported browsers render a
+  fully static site.
+- **Reading progress**: a 2px brass hairline grows across the top of essay
+  pages, driven by the same scroll timeline.
+- **Micro-interactions**: buttons lift 1px on hover; index rows and text
+  links transition color/transform at 0.15–0.18s.
+
+`prefers-reduced-motion: reduce` disables every animation and the progress
+bar; content is always visible without animation. No scroll interception, no
+parallax, no looping effects.
 
 ## 8. Accessibility constraints
 
