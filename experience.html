@@ -6,14 +6,14 @@
     <title>Experience — Meysam Valiolahi</title>
     <meta
       name="description"
-      content="The engineering career of Meysam Valiolahi: leadership at Sheypoor, Takhfifan, Karnameh, Dataak, Shab and SibApp, with a software foundation dating to 2010."
+      content="Where the lessons come from: engineering leadership at Sheypoor, Takhfifan, and Karnameh — the context, the challenge, and what changed at each."
     />
     <link rel="canonical" href="https://mvaliolahi.ir/experience.html" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Experience — Meysam Valiolahi" />
     <meta
       property="og:description"
-      content="From writing software in 2010 to VP and CTO — the engineering career of Meysam Valiolahi at Sheypoor, Takhfifan, Karnameh, Dataak, Shab and SibApp."
+      content="Engineering leadership at Sheypoor, Takhfifan, and Karnameh — the context, the challenge, and what changed."
     />
     <meta property="og:url" content="https://mvaliolahi.ir/experience.html" />
     <meta
@@ -23,26 +23,38 @@
     <meta name="theme-color" content="#faf6ec" />
     <link rel="stylesheet" href="assets/site.css" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mvaliolahi.ir/" },
+          { "@type": "ListItem", "position": 2, "name": "Experience", "item": "https://mvaliolahi.ir/experience.html" }
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <a class="wordmark" href="./">Meysam Valiolahi<span>.</span></a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="./">profile</a>
+        <a href="./#about">about</a>
         <a href="experience.html" aria-current="page">experience</a>
-        <a href="perspective.html">perspective</a>
+        <a href="perspective.html">thinking</a>
+        <a href="writing/">writing</a>
         <a href="books/">books <span lang="fa" dir="rtl">/ کتاب‌ها</span></a>
       </nav>
     </header>
     <main id="main">
       <div class="page-head">
-        <p class="eyebrow">2010 → today</p>
-        <h1>Fifteen years of making things work<span class="doodle">.</span></h1>
+        <p class="eyebrow">where the lessons come from</p>
+        <h1>Experience<span class="doodle">.</span></h1>
         <p class="intro">
-          I started as a developer in 2010. Somewhere along the way the systems
-          got bigger and the job became people: building teams that ship
-          reliably and enjoy the work. Here's the honest record.
+          This page is context, not the whole story. For each role: what the
+          situation was, what needed to change, and what changed. The detailed
+          reasoning lives in the
+          <a href="writing/">case studies and essays</a>.
         </p>
       </div>
 
@@ -55,22 +67,30 @@
           </div>
           <p class="dates">Apr 2024 – Oct 2025 · Tehran</p>
           <p class="scope">
-            Led engineering, infrastructure, data, and QA for a classifieds
-            platform serving more than five million monthly active users,
-            reporting directly to the CEO. Traffic was sliding when I arrived;
-            we stopped the bleed.
+            <strong>Context:</strong> a classifieds platform with 5M+ monthly
+            users, roughly 65 engineers across seven teams, reporting to the
+            CEO with no separate CTO. Traffic had been declining for about
+            eight months when I arrived, and the Android app hadn't shipped to
+            production in roughly two years.
+          </p>
+          <p class="scope">
+            <strong>What changed:</strong> we investigated the decline across
+            Search Console, logs, and ranking data; rewrote the failing custom
+            SSR frontend; fixed deep links through backend changes; and shipped
+            the Android release that unblocked everything. Alongside the
+            technical work, the organisation itself changed — clearer
+            ownership, restructured teams, regular independent releases.
           </p>
           <div class="badges">
-            <span class="sticker sticker--pom">5M+ monthly users</span>
-            <span class="sticker sticker--pis">30% faster delivery</span>
-            <span class="sticker sticker--tum">payment completion +50%</span>
+            <span class="sticker sticker--pom">both problems resolved</span>
+            <span class="sticker sticker--pis">~monthly releases</span>
+            <span class="sticker sticker--tum">CWV green</span>
           </div>
-          <ul class="wins">
-            <li>Restructured engineering into autonomous teams — higher velocity without new headcount.</li>
-            <li>Directed the response to a 50% traffic decline (deep-linking, push, SEO), stabilising five million monthly users.</li>
-            <li>Prioritised platform health: Core Web Vitals compliance and the revival of a mobile app idle for two years.</li>
-            <li>Established quarterly OKRs, structured Agile practices, and clear mentorship pathways.</li>
-          </ul>
+          <p class="more">
+            The full story — including what I'd do differently — is the site's
+            main case study:
+            <a class="text-link" href="case-studies/sheypoor.html">When technical debt becomes business debt</a>
+          </p>
         </article>
 
         <!-- ============================================ Takhfifan -->
@@ -81,20 +101,26 @@
           </div>
           <p class="dates">Nov 2022 – Apr 2024 · Tehran</p>
           <p class="scope">
-            Held unified responsibility for technology and product at a
-            discount and cashback platform. My rule there: engineering
-            priorities must map to money — revenue, cost, or risk.
+            <strong>Context:</strong> a discount and cashback platform where I
+            held unified responsibility for technology and product.
+          </p>
+          <p class="scope">
+            <strong>What changed:</strong> every engineering priority was tied
+            to revenue, cost, or risk; the organisation was redesigned into
+            autonomous cross-functional squads; and we set the strategy for —
+            then launched — our own payment infrastructure, reducing dependency
+            on third-party providers. A technical-debt roadmap was commissioned
+            and governed; eliminating a 45-second checkout bottleneck was one
+            visible result.
           </p>
           <div class="badges">
             <span class="sticker sticker--pom">launched Takhfifan Payment</span>
             <span class="sticker sticker--pis">tech + product, one org</span>
           </div>
-          <ul class="wins">
-            <li>Owned technology and product end-to-end, tying every engineering priority to revenue, cost, or risk.</li>
-            <li>Set the strategy for proprietary payment infrastructure and led its launch — reducing dependency on third-party providers.</li>
-            <li>Redesigned the organisation into autonomous, cross-functional squads; higher throughput at the same headcount.</li>
-            <li>Commissioned and governed a technical-debt roadmap — eliminating a 45-second checkout bottleneck was one visible result.</li>
-          </ul>
+          <p class="more">
+            The debt-roadmap experience later fed directly into an essay:
+            <a class="text-link" href="writing/technical-debt-becomes-business-debt.html">When technical debt becomes business debt</a>
+          </p>
         </article>
 
         <!-- ============================================= Karnameh -->
@@ -105,20 +131,21 @@
           </div>
           <p class="dates">Dec 2021 – Dec 2022 · Tehran</p>
           <p class="scope">
-            Led the technical and organisational separation from Divar —
-            building an independent engineering organisation for a vehicle
-            inspection and leasing platform. Surgery on a living system.
+            <strong>Context:</strong> a vehicle inspection and leasing platform
+            separating from its parent company, Divar.
+          </p>
+          <p class="scope">
+            <strong>What changed:</strong> we directed the full separation of
+            infrastructure, data, and codebases without disrupting the parent
+            company, and built the engineering organisation from scratch —
+            hiring, culture, practices, and an independent headquarters. The
+            vehicle-leasing product went from conception to delivery as a new
+            business vertical.
           </p>
           <div class="badges">
             <span class="sticker sticker--pis">zero service disruption</span>
             <span class="sticker sticker--tum">new leasing vertical</span>
           </div>
-          <ul class="wins">
-            <li>Directed the full separation of infrastructure, data, and codebases without disrupting the parent company.</li>
-            <li>Built the engineering organisation from scratch: hiring, culture, and engineering practices.</li>
-            <li>Relocated technical operations to an independent headquarters.</li>
-            <li>Championed the vehicle-leasing product from conception through delivery — a new business vertical.</li>
-          </ul>
         </article>
 
         <!-- ================================ polaroid: earliest chapter -->
@@ -149,7 +176,9 @@
           </ol>
           <p class="note" style="margin-top: 24px">
             Want the formal version? It lives on
-            <a href="https://www.linkedin.com/in/meysam-valiolahi/">LinkedIn ↗</a>.
+            <a href="https://www.linkedin.com/in/meysam-valiolahi/">LinkedIn ↗</a>. The
+            thinking these roles produced is on
+            <a href="perspective.html">how I think</a>.
           </p>
         </section>
       </div>

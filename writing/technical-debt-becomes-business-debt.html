@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>When Technical Debt Becomes Business Debt — Meysam Valiolahi</title>
+    <meta
+      name="description"
+      content="Technical debt stops being an engineering concern the moment it affects acquisition, conversion, reliability, or speed. A lesson from a real traffic decline."
+    />
+    <link rel="canonical" href="https://mvaliolahi.ir/writing/technical-debt-becomes-business-debt.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="When Technical Debt Becomes Business Debt" />
+    <meta property="og:description" content="Technical debt can become business debt when it directly affects acquisition, conversion, reliability, or speed. What a prolonged traffic decline taught me." />
+    <meta property="og:url" content="https://mvaliolahi.ir/writing/technical-debt-becomes-business-debt.html" />
+    <meta property="og:image" content="https://mvaliolahi.ir/books/leading-effectice-engineering-teams/images/meysam_2025.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="When Technical Debt Becomes Business Debt" />
+    <meta name="twitter:description" content="Debt stops being an engineering concern the moment it affects acquisition, conversion, reliability, or speed." />
+    <meta name="theme-color" content="#faf6ec" />
+    <link rel="stylesheet" href="../assets/site.css" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "When Technical Debt Becomes Business Debt",
+        "description": "Technical debt can become business debt when it directly affects acquisition, conversion, reliability, or speed.",
+        "author": { "@type": "Person", "name": "Meysam Valiolahi", "url": "https://mvaliolahi.ir/" },
+        "articleSection": "Lessons from Practice",
+        "mainEntityOfPage": "https://mvaliolahi.ir/writing/technical-debt-becomes-business-debt.html"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="../">Meysam Valiolahi<span>.</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../#about">about</a>
+        <a href="../experience.html">experience</a>
+        <a href="../perspective.html">thinking</a>
+        <a href="../writing/" aria-current="page">writing</a>
+        <a href="../books/">books <span lang="fa" dir="rtl">/ کتاب‌ها</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <nav class="breadcrumb wrap" aria-label="Breadcrumb">
+        <ul>
+          <li><a href="../">Home</a> <span aria-hidden="true">/</span></li>
+          <li><a href="./">Writing</a> <span aria-hidden="true">/</span></li>
+          <li><span aria-current="page">Technical debt, business debt</span></li>
+        </ul>
+      </nav>
+
+      <article class="essay">
+        <p class="kicker">lessons from practice</p>
+        <h1>When technical debt becomes business debt</h1>
+        <p class="standfirst">
+          Most of the time, technical debt is an engineering problem — it makes
+          work slower and riskier, and it stays inside the engineering
+          department. But there is a threshold where it crosses over. When debt
+          starts affecting acquisition, conversion, reliability, or speed, it
+          stops being technical debt and becomes business debt. At that point
+          the conversation has to change.
+        </p>
+        <div class="byline">
+          <span class="sticker sticker--pis">lessons from practice</span>
+          <span>based on the <a href="../case-studies/sheypoor.html">Sheypoor case study</a></span>
+        </div>
+
+        <h2>The usual framing undersells the risk</h2>
+        <p>
+          The standard metaphor — "we're taking a loan against future velocity"
+          — is accurate but quiet. It makes debt sound like an internal
+          accounting problem, something engineering settles with itself during
+          quarterly planning.
+        </p>
+        <p>
+          What I saw at Sheypoor was louder than that. A significant traffic
+          decline had been running for roughly eight months when I joined. The
+          investigation eventually pointed at several distinct technical
+          problems: SEO issues tied significantly to a custom server-side
+          rendering implementation, deep-link problems that broke the path into
+          the app, push notification issues that needed a new Android release.
+          Each one was accumulated technical debt. Each one had already become
+          a business number.
+        </p>
+        <p>
+          Traffic was the top of the funnel for the entire company. The debt
+          wasn't slowing engineers down — it was draining customers out.
+        </p>
+
+        <h2>The four crossings</h2>
+        <p>
+          In my experience, technical debt becomes business debt when it
+          reaches one of four systems:
+        </p>
+        <ul>
+          <li><strong>Acquisition</strong> — the market can no longer find or reach the product. SEO decay is the classic case: invisible, gradual, compounding.</li>
+          <li><strong>Conversion</strong> — users arrive but the journey leaks. Broken deep links and slow, failing flows are debt expressing itself as revenue friction.</li>
+          <li><strong>Reliability</strong> — the product fails in ways customers notice. Every unreleased fix is a promise the product can't keep.</li>
+          <li><strong>Speed</strong> — not page speed alone, but the speed at which the business can act. When releasing takes months, the business loses the ability to respond to anything.</li>
+        </ul>
+        <p>
+          The first two take money directly from the top line. The second two
+          take it indirectly, by freezing the organisation while the market
+          moves.
+        </p>
+
+        <h2>What changes when you see it that way</h2>
+        <p>
+          Once debt has crossed, the discussion stops being "should we invest
+          in paying this down" and becomes "which business problem are we
+          choosing to have". That reframing matters for leaders, because it
+          changes who belongs in the room. It's no longer an engineering
+          roadmap negotiation; it's a business triage.
+        </p>
+        <p>
+          At Sheypoor, the decision to rewrite the affected SSR pages with
+          Next.js instead of continuing to repair our custom framework was
+          exactly this kind of decision. The framework had consumed more than a
+          year of effort and was still contributing significantly to the SEO
+          problem. Keeping it meant choosing continued business damage in
+          exchange for sunk-cost pride. The rewrite was technically unglamorous
+          — and it was the right call: roughly 20+ days after launch, Core Web
+          Vitals were passing across the board, and the SEO issues that had
+          been bleeding acquisition were addressed.
+        </p>
+
+        <div class="lesson-box">
+          The question is not "how much debt do we have". It is "has any of it
+          reached the business yet". Ask that question monthly, not
+          quarterly.
+        </div>
+
+        <h2>How to find the crossings early</h2>
+        <p>
+          Debt never announces its crossing; the instruments do. In our case,
+          Google Search Console, application logs, and ranking data were where
+          the debt showed up as business symptoms. The discipline I'd
+          recommend from that experience:
+        </p>
+        <ul>
+          <li>Watch business instruments, not just engineering ones — acquisition, conversion, release cadence.</li>
+          <li>When a business metric slides for months with no clear cause, assume debt until proven otherwise. We assumed ambiguity; the data eventually spoke.</li>
+          <li>Price the debt in the currency it's actually draining: customers, revenue, and time-to-act — not story points.</li>
+        </ul>
+
+        <h2>In retrospect</h2>
+        <p>
+          The hardest part of that period wasn't fixing any single problem —
+          each fix, once identified, was achievable. The hard part was the
+          months where the decline was still happening and the cause was
+          unclear. Debt that has crossed into the business does that: it
+          charges interest in customers while you're still looking for the
+          loan documents.
+        </p>
+
+        <div class="related">
+          <h2>Related</h2>
+          <ul>
+            <li>
+              <a href="../case-studies/sheypoor.html">
+                <span class="r-title">Case study: We didn't have a traffic problem</span>
+                <span class="r-desc">The full story behind this lesson — investigation, decisions, and outcomes.</span>
+                <span class="r-tag">Case study</span>
+              </a>
+            </li>
+            <li>
+              <a href="we-didnt-need-an-ssr-framework.html">
+                <span class="r-title">We Didn't Need to Build an SSR Framework</span>
+                <span class="r-desc">The build-vs-adopt judgment call behind one of the debt crossings.</span>
+                <span class="r-tag">Architecture</span>
+              </a>
+            </li>
+            <li>
+              <a href="two-year-release-gap.html">
+                <span class="r-title">A Two-Year Release Gap Is Not a Mobile Problem</span>
+                <span class="r-desc">When the inability to ship becomes the fourth crossing: speed.</span>
+                <span class="r-tag">Delivery</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 Meysam Valiolahi — built by hand, no frameworks.</p>
+      <div>
+        <a href="mailto:mvaliolahi@gmail.com">Email ↗</a> &nbsp;/&nbsp;
+        <a href="https://www.linkedin.com/in/meysam-valiolahi/">LinkedIn ↗</a> &nbsp;/&nbsp;
+        <a href="https://t.me/m_valiolahi">Telegram ↗</a>
+      </div>
+    </footer>
+  </body>
+</html>

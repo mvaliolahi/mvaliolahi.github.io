@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Team Structure Is Part of Your Architecture — Meysam Valiolahi</title>
+    <meta
+      name="description"
+      content="Team boundaries shape ownership, communication, technical decisions, and eventually the architecture itself. Reflections from reorganising a 65-person engineering organisation."
+    />
+    <link rel="canonical" href="https://mvaliolahi.ir/writing/team-structure-is-architecture.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Your Team Structure Is Part of Your Architecture" />
+    <meta property="og:description" content="Team boundaries influence ownership, communication, technical decisions, architecture, and delivery. The org chart is part of the system." />
+    <meta property="og:url" content="https://mvaliolahi.ir/writing/team-structure-is-architecture.html" />
+    <meta property="og:image" content="https://mvaliolahi.ir/books/leading-effectice-engineering-teams/images/meysam_2025.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Your Team Structure Is Part of Your Architecture" />
+    <meta name="twitter:description" content="The org chart is part of the system: team boundaries shape ownership, communication, and the architecture itself." />
+    <meta name="theme-color" content="#faf6ec" />
+    <link rel="stylesheet" href="../assets/site.css" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Your Team Structure Is Part of Your Architecture",
+        "description": "Team boundaries influence ownership, communication, technical decisions, architecture, and delivery.",
+        "author": { "@type": "Person", "name": "Meysam Valiolahi", "url": "https://mvaliolahi.ir/" },
+        "articleSection": "Organisation Design",
+        "mainEntityOfPage": "https://mvaliolahi.ir/writing/team-structure-is-architecture.html"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="../">Meysam Valiolahi<span>.</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../#about">about</a>
+        <a href="../experience.html">experience</a>
+        <a href="../perspective.html">thinking</a>
+        <a href="../writing/" aria-current="page">writing</a>
+        <a href="../books/">books <span lang="fa" dir="rtl">/ کتاب‌ها</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <nav class="breadcrumb wrap" aria-label="Breadcrumb">
+        <ul>
+          <li><a href="../">Home</a> <span aria-hidden="true">/</span></li>
+          <li><a href="./">Writing</a> <span aria-hidden="true">/</span></li>
+          <li><span aria-current="page">Team structure is architecture</span></li>
+        </ul>
+      </nav>
+
+      <article class="essay">
+        <p class="kicker">organisation design</p>
+        <h1>Your team structure is part of your architecture</h1>
+        <p class="standfirst">
+          We like to pretend the architecture lives in the repository and the
+          organisation lives in the HR system. It doesn't. Team boundaries
+          shape who owns what, who talks to whom, which technical decisions
+          get made quickly and which rot — and over time, they shape the
+          system itself.
+        </p>
+        <div class="byline">
+          <span class="sticker sticker--pis">organisation design</span>
+          <span>based on the <a href="../case-studies/sheypoor.html">Sheypoor case study</a></span>
+        </div>
+
+        <h2>A problem that ignored the org chart</h2>
+        <p>
+          At Sheypoor, the traffic decline that dominated my arrival didn't
+          respect team boundaries. The investigation crossed SEO (frontend),
+          deep links (backend services), push notifications (mobile), and
+          release capability (everywhere). The org chart said "mobile", "web",
+          "backend". The problem refused to.
+        </p>
+        <p>
+          What appeared to be a business conversion problem required
+          investigation across multiple technical boundaries — and each
+          boundary it crossed was a place where ownership was ambiguous, the
+          investigation slowed down.
+        </p>
+
+        <h2>Boundaries become architecture</h2>
+        <p>
+          Conway's law is usually quoted as a joke. It's actually an
+          instruction. Teams don't just maintain architecture; the way teams
+          are structured often shapes it. Interfaces harden where
+          organisations harden. Systems grow complicated where communication
+          is expensive. Ownership blurs where team boundaries don't match
+          subsystem boundaries.
+        </p>
+        <p>
+          The reverse is also true, and it's the reason organisation design is
+          engineering work: when we changed team structures so ownership
+          matched the problems we needed solved, technical decisions got
+          faster and better. Not because anyone wrote more code — because the
+          people closest to each problem finally had the authority and
+          information to decide.
+        </p>
+
+        <h2>What changed at Sheypoor</h2>
+        <p>
+          The organisational changes we made were, in retrospect, architecture
+          changes:
+        </p>
+        <ul>
+          <li>Team structure changes, so ownership matched the problems rather than history.</li>
+          <li>Hiring and, where necessary, replacing people to address current problems rather than inherited ones.</li>
+          <li>Clearer ownership across systems and product areas.</li>
+          <li>More active participation from teams in technical roadmaps and engineering improvements.</li>
+        </ul>
+        <p>
+          None of these touched a line of code directly. All of them changed
+          how the system evolved afterwards.
+        </p>
+
+        <div class="lesson-box">
+          Team boundaries, ownership, and communication models are not
+          management details that sit beside technology. They are part of the
+          system.
+        </div>
+
+        <h2>The honest cost</h2>
+        <p>
+          I want to be careful not to make this sound clean. Structural
+          decisions affect people's roles, reporting lines, and sometimes
+          their jobs. Some technical problems were visible before the
+          organisational structure around them was clear, and I would have
+          made those organisational decisions more decisively — earlier
+          structural calls, clearer roles, clearer boundaries. Delay has a
+          price, and in my experience the price is usually paid twice: once in
+          confusion, once in the technical debt the confusion quietly
+          produces.
+        </p>
+        <p>
+          More on that in
+          <a href="../differently.html">things I'd do differently</a>.
+        </p>
+
+        <h2>A practical test</h2>
+        <p>
+          If you want to know whether your team structure is helping or
+          fighting your architecture, don't read the org chart. Watch the
+          paths:
+        </p>
+        <ul>
+          <li>When a problem spans two teams, does anyone own the seam? Or does it wait for a leadership meeting?</li>
+          <li>Can a team improve its own subsystem without negotiating with three others?</li>
+          <li>Do technical decisions happen where the information is — or where the authority happens to sit?</li>
+        </ul>
+        <p>
+          Where the answers are bad, the fix is usually not a reorg for its
+          own sake. It's making ownership explicit where it has quietly gone
+          shared.
+        </p>
+
+        <div class="related">
+          <h2>Related</h2>
+          <ul>
+            <li>
+              <a href="../case-studies/sheypoor.html">
+                <span class="r-title">Case study: We didn't have a traffic problem</span>
+                <span class="r-desc">The investigation that made team boundaries visible.</span>
+                <span class="r-tag">Case study</span>
+              </a>
+            </li>
+            <li>
+              <a href="two-year-release-gap.html">
+                <span class="r-title">A Two-Year Release Gap Is Not a Mobile Problem</span>
+                <span class="r-desc">Structure as one of the five system-level causes of inability to ship.</span>
+                <span class="r-tag">Delivery</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 Meysam Valiolahi — built by hand, no frameworks.</p>
+      <div>
+        <a href="mailto:mvaliolahi@gmail.com">Email ↗</a> &nbsp;/&nbsp;
+        <a href="https://www.linkedin.com/in/meysam-valiolahi/">LinkedIn ↗</a> &nbsp;/&nbsp;
+        <a href="https://t.me/m_valiolahi">Telegram ↗</a>
+      </div>
+    </footer>
+  </body>
+</html>

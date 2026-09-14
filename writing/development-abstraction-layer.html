@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Development Abstraction Layer — Meysam Valiolahi</title>
+    <meta
+      name="description"
+      content="A developer's job is code; the manager's job is to build the layer that hides everything else. My retelling of Joel Spolsky's classic on the development abstraction layer."
+    />
+    <link rel="canonical" href="https://mvaliolahi.ir/writing/development-abstraction-layer.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="The Development Abstraction Layer" />
+    <meta
+      property="og:description"
+      content="A developer's job is code; the manager's job is to build the layer that hides everything else. A retelling of Joel Spolsky's classic."
+    />
+    <meta property="og:url" content="https://mvaliolahi.ir/writing/development-abstraction-layer.html" />
+    <meta
+      property="og:image"
+      content="https://mvaliolahi.ir/books/leading-effectice-engineering-teams/images/meysam_2025.png"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="The Development Abstraction Layer" />
+    <meta name="twitter:description" content="A developer's job is code; the manager's job is to build the layer that hides everything else." />
+    <meta name="theme-color" content="#faf6ec" />
+    <link rel="stylesheet" href="../assets/site.css" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The Development Abstraction Layer",
+        "description": "A developer's job is code; the manager's job is to build the layer that hides everything else. A retelling of Joel Spolsky's classic.",
+        "author": { "@type": "Person", "name": "Meysam Valiolahi", "url": "https://mvaliolahi.ir/" },
+        "articleSection": "Notes",
+        "mainEntityOfPage": "https://mvaliolahi.ir/writing/development-abstraction-layer.html"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="../">Meysam Valiolahi<span>.</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../#about">about</a>
+        <a href="../experience.html">experience</a>
+        <a href="../perspective.html">thinking</a>
+        <a href="./" aria-current="page">writing</a>
+        <a href="../books/">books <span lang="fa" dir="rtl">/ کتاب‌ها</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <nav class="breadcrumb wrap" aria-label="Breadcrumb">
+        <ul>
+          <li><a href="../">Home</a> <span aria-hidden="true">/</span></li>
+          <li><a href="./">Writing</a> <span aria-hidden="true">/</span></li>
+          <li><span aria-current="page">The development abstraction layer</span></li>
+        </ul>
+      </nav>
+
+      <article class="essay">
+        <p class="kicker">notes · a classic, retold</p>
+        <h1>The development abstraction layer</h1>
+        <p class="standfirst">
+          This is my Persian-then-English retelling of Joel Spolsky's classic
+          essay <a href="https://www.joelonsoftware.com/2006/04/11/the-development-abstraction-layer-2/">"The Development Abstraction Layer" (2006)</a>,
+          which I first published in Persian on LinkedIn. The argument has
+          aged better than most of our frameworks: a developer's job is code —
+          and the manager's job is to build the layer that hides everything
+          else.
+        </p>
+        <div class="byline">
+          <span class="sticker sticker--pis">a classic, retold</span>
+          <span>original by <a href="https://www.joelonsoftware.com/2006/04/11/the-development-abstraction-layer-2/">Joel Spolsky</a> · retold with credit</span>
+        </div>
+
+        <h2>The newcomer</h2>
+        <p>
+          Picture a young man arriving in a new city. He doesn't look bad —
+          some savings, friendly, sociable. He doesn't talk much about his
+          past, but his face says he spent years at some big, soulless
+          corporation. There's a calm, unpretentious confidence about him that
+          lets him fit in anywhere.
+        </p>
+        <p>
+          With exactly these qualities he starts picking up small jobs from
+          the project board at a café for programmers. Once it's a database
+          for an insurance firm; once a website for a housewife; once a
+          financial calculation engine for somebody else. He gets bored of
+          the grunt work quickly.
+        </p>
+        <p>
+          A year passes. He does the math and realises his savings can
+          stretch another year. He consults his faithful dog — a German
+          shepherd — and decides to start a big personal project. He sits at
+          his machine in his bright rented flat above a supermarket, installs
+          a mountain of specialised tools, calls his friends one by one:
+          "If I'm a bit withdrawn in the coming months, or slow to reply —
+          know that I'm working on something great."
+        </p>
+
+        <h2>What brilliant code buys you</h2>
+        <p>
+          And what code! Clean. Artisanal. Bug-free. A user interface so well
+          designed you don't notice there's an interface at all. He shows the
+          beta to a few people at the café and they're amazed.
+        </p>
+        <p>
+          Encouraged, he registers a small company and waits for clients to
+          arrive. A month later he checks the bank account: three orders.
+          One from his mother. One from a kind person he'd met at the café.
+          And the third he placed himself, to test the ordering system.
+        </p>
+        <p>
+          Month two: nothing. No orders, no income. He's stunned. At his old
+          company, everything they built had customers — even when it wasn't
+          special. One of his projects there had been so successful its name
+          was everywhere. So why does nothing move now?
+        </p>
+        <p>
+          Months pass and things get bad. His dog — always his well-wisher —
+          now watches him with worry. He has no energy to go out, shop,
+          shower. Every day a little greyer. One Tuesday morning the
+          supermarket on the corner stops giving him credit. The bank has
+          long stopped answering the phone. Eventually his old company
+          invites him back; with no hard feelings, they even offer a higher
+          salary. Slowly he recovers — new clothes, returning confidence —
+          but that gleam of hope in his eyes, the one that wanted to be
+          <em>master of his own destiny</em>, doesn't quite come back.
+        </p>
+
+        <h2>It wasn't marketing</h2>
+        <p>
+          In his own head, the failure is obvious: marketing. Like many
+          technical people, he believes Microsoft only made it because of
+          great marketing — their products were never that good anyway.
+        </p>
+        <p>
+          But when a programmer says "marketing", they usually mean
+          <em>everything outside their own circle of competence</em> — all
+          the things building and selling software requires that they don't
+          know how to do.
+        </p>
+        <p>
+          The truth is his problem was never marketing. Microsoft doesn't
+          have extraordinary marketing either — does anyone really buy
+          Office because of that dinosaur ad? Software is, in the end, a
+          conversation between developer and user. But for that conversation
+          to happen, a lot of other work has to be done: marketing, sales,
+          public relations, office space, infrastructure, customer support,
+          accounting, and much more.
+        </p>
+        <p>
+          And the programmer's actual job? Design, writing code, debugging,
+          combining code and pushing it to the repository. That's it. The
+          level at which a developer works is so high and so abstract that it
+          can't, by itself, keep a business alive. Just as a professional
+          singer cannot succeed without a producer, a concert hall, a sound
+          team, and advertising — a programmer needs an executive layer that
+          turns code into a real product.
+        </p>
+
+        <h2>The layer</h2>
+        <p>
+          Every successful software company has a small team of developers
+          riding on top of a large supporting structure. The structure is so
+          good it creates the illusion that code alone moves everything
+          forward — while behind the scenes it's full of people and work.
+        </p>
+        <p>
+          That's why one of the most important jobs of a manager in a
+          software team is to build an <strong>abstraction layer</strong>:
+          the developer's entire focus stays on code, and everything else —
+          technical and non-technical — stays out of view.
+        </p>
+        <p>
+          The trouble is that many new managers still carry the old model of
+          running a company — the one from the films. The boss decides,
+          orders roll downhill, the employee is a cog. You've met the
+          companies that still run this way: rigid policies that shed loyal
+          customers; services that cut in and out and make cancellation an
+          afternoon's project; carmakers that keep changing their marketing
+          strategy while their cars stay badly made. That model is a hundred
+          years old. In software, we need a new one:
+        </p>
+        <div class="pull-quote">
+          A manager's job is not to give orders. It is to build the
+          abstraction layer that lets the programmer think only about code.
+        </div>
+        <p>
+          "If your programmer is worrying about their broken chair, or
+          fighting with Dell support over a new machine, the layer you built
+          is leaking."
+        </p>
+        <p>
+          Picture your company as a yacht. The programmers are on deck,
+          thinking only about direction and lunch. Below deck, a professional
+          crew turns everything: engine, ventilation, table service. "Your
+          job is to build that below-deck crew so good that nobody even
+          notices it exists. That is management."
+        </p>
+
+        <h2>Two failure modes</h2>
+        <p>
+          Some companies are too sales-driven; some too technology-driven.
+          The sales-driven ones only care about signing the contract and
+          shipping version 1.0 — then they drop the work. The
+          technology-driven ones get so deep into code they forget why
+          they're building software at all — and the project gets lost in a
+          big rewrite in Ruby or whatever framework is fashionable this
+          month.
+        </p>
+        <p>
+          "The successful company is the one that puts the programmer in the
+          middle, with a strong support system behind them that takes the
+          code and delivers a real product."
+        </p>
+        <p>
+          For a developer, the ideal environment is a quiet room, a strong
+          machine, free drinks, the right temperature, a comfortable chair —
+          and a team that does everything else, from systems management and
+          testing to design, sales, and support.
+        </p>
+        <p>
+          A curious detail: in the ancient Roman army, every soldier had
+          about four people supporting him. In the modern American army the
+          ratio is around seven to one. So if in your company only twenty
+          percent of the people are programmers and the rest support them —
+          that is not a bad thing at all. (And if you're thinking of
+          offshoring to halve your costs, the realistic saving is closer to
+          ten percent — rarely worth the trouble.)
+        </p>
+        <p>
+          "The important thing is to create the <em>illusion of total focus
+          on code</em> for your programmers. Everything solved; only coding
+          left. Don't expect them to also understand accounting or do
+          marketing. Expecting that is like teaching a pig to sing — it
+          wastes your time and annoys the pig."
+        </p>
+        <p>
+          Microsoft has built this layer so well that when some of its former
+          employees try to start their own businesses, they fail — because
+          they never knew what was being done for them behind the scenes.
+        </p>
+
+        <h2>The song you hear</h2>
+        <p>
+          In the end: when a beautiful Dolly Parton song plays on your phone,
+          an enormous world stands behind it — studio, distribution,
+          advertising, sales, legal. But because the system works so well,
+          you just hear the song and enjoy it.
+        </p>
+        <div class="lesson-box">
+          Good management is building a complete system that stays invisible
+          — one that lets programmers do their real work: writing code.
+        </div>
+
+        <p class="note">
+          Original essay: Joel Spolsky, <a href="https://www.joelonsoftware.com/2006/04/11/the-development-abstraction-layer-2/">"The Development Abstraction Layer"</a>,
+          Joel on Software, 2006. This is a retelling with credit, first
+          published in Persian on LinkedIn, translated to English here.
+        </p>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 Meysam Valiolahi — built by hand, no frameworks.</p>
+      <div>
+        <a href="mailto:mvaliolahi@gmail.com">Email ↗</a> &nbsp;/&nbsp;
+        <a href="https://www.linkedin.com/in/meysam-valiolahi/">LinkedIn ↗</a> &nbsp;/&nbsp;
+        <a href="https://t.me/m_valiolahi">Telegram ↗</a>
+      </div>
+    </footer>
+  </body>
+</html>

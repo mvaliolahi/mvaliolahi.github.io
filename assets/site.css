@@ -1172,6 +1172,441 @@ body.fa .price {
 }
 
 /* --------------------------------------------------------------------------
+   writing & case studies
+   -------------------------------------------------------------------------- */
+
+/* breadcrumb trail */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s1) var(--s2);
+  padding-block: var(--s4) 0;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+.breadcrumb a {
+  color: inherit;
+}
+
+.breadcrumb a:hover {
+  color: var(--pomegranate);
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  list-style: none;
+}
+
+.breadcrumb ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s2);
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb [aria-current] {
+  color: var(--ink-soft);
+
+  /* wobble underline in accent colour */
+  text-decoration: underline wavy var(--turmeric) 1.5px;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* essay index rows (writing index + "selected writing" on home) */
+.essay-index {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.essay-index a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--s2) var(--s4);
+  align-items: baseline;
+  padding: var(--s4) var(--s3);
+  text-decoration: none;
+  border-radius: var(--r-hand-soft);
+}
+
+.essay-index a:hover {
+  background: var(--wash-tum);
+}
+
+.essay-index li + li a {
+  border-top: 1.5px dashed var(--line-strong);
+}
+
+.essay-index h3 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
+body.fa .essay-index h3 {
+  font-size: 18px;
+}
+
+.essay-index .cat {
+  font-size: 12.5px;
+  color: var(--pistachio-deep);
+  white-space: nowrap;
+  justify-self: end;
+}
+
+.essay-index p {
+  grid-column: 1 / -1;
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  max-width: 60ch;
+}
+
+.essay-index .rule {
+  color: var(--ink-faint);
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+/* essay/case-study reading layout */
+.essay {
+  max-width: 740px;
+  margin-inline: auto;
+  padding-block: var(--s6) var(--s12);
+}
+
+.essay h1 {
+  font-size: clamp(34px, 4.4vw, 52px);
+  letter-spacing: -0.025em;
+  margin-block: var(--s4);
+}
+
+body.fa .essay h1 {
+  font-size: clamp(28px, 3.6vw, 40px);
+}
+
+.essay .standfirst {
+  font-size: 19px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+  max-width: 56ch;
+  margin-bottom: var(--s8);
+}
+
+.essay .byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
+  align-items: baseline;
+  font-size: 13.5px;
+  color: var(--ink-faint);
+  margin-bottom: var(--s6);
+}
+
+.essay .byline .sticker {
+  transform: rotate(-1.2deg);
+  font-size: 12.5px;
+  padding: 3px 10px;
+  max-width: none;
+}
+
+.essay h2 {
+  font-size: clamp(24px, 2.8vw, 32px);
+  letter-spacing: -0.02em;
+  margin-block: var(--s12) var(--s4);
+}
+
+.essay h3 {
+  font-size: 20px;
+  margin-block: var(--s8) var(--s2);
+}
+
+.essay p,
+.essay ul,
+.essay ol {
+  max-width: 66ch;
+}
+
+.essay ul,
+.essay ol {
+  padding-inline-start: 1.4em;
+}
+
+.essay li {
+  margin-block: var(--s2);
+}
+
+.essay li::marker {
+  color: var(--pomegranate);
+  font-weight: 700;
+}
+
+/* compact reference list */
+.refs {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--ink) 72%, var(--paper));
+}
+.refs li {
+  margin-block: var(--s1);
+}
+
+/* decision card — a judgement call, framed */
+.decision,
+.pull-quote,
+.lesson-box {
+  position: relative;
+  background: var(--card);
+  border: 1.6px solid var(--ink);
+  border-radius: var(--r-hand-soft);
+  padding: var(--s6);
+  margin-block: var(--s8);
+  box-shadow: 4px 5px 0 rgb(43 33 24 / 0.12);
+}
+
+.pull-quote,
+.lesson-box {
+  background: var(--wash-tum);
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+body.fa .pull-quote,
+body.fa .lesson-box {
+  font-family: var(--font-fa-display);
+  font-style: normal;
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.pull-quote::before {
+  content: "“";
+  position: absolute;
+  inset-block-start: -26px;
+  inset-inline-start: 18px;
+  font-family: var(--font-display);
+  font-size: 64px;
+  color: var(--pomegranate);
+  line-height: 1;
+}
+
+.lesson-box {
+  background: var(--wash-pis);
+  border-radius: var(--r-hand);
+}
+
+.lesson-box::before {
+  content: "the lesson";
+  position: absolute;
+  inset-block-start: -14px;
+  inset-inline-start: 22px;
+  padding: 2px 12px;
+  background: var(--pistachio-deep);
+  color: var(--card);
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: var(--r-hand-tight);
+  transform: rotate(-1.5deg);
+}
+
+.decision {
+  background: var(--wash-pom);
+}
+
+.decision::before {
+  content: "the decision";
+  position: absolute;
+  inset-block-start: -14px;
+  inset-inline-start: 22px;
+  padding: 2px 12px;
+  background: var(--pomegranate-deep);
+  color: var(--card);
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: var(--r-hand-tight);
+  transform: rotate(1.2deg);
+}
+
+.decision .what {
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.5;
+  margin-bottom: var(--s3);
+}
+
+.decision .why {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+}
+
+.decision .why strong {
+  color: var(--ink);
+}
+
+/* before/after panel */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s4);
+  margin-block: var(--s8);
+}
+
+.compare .before,
+.compare .after {
+  background: var(--card);
+  border: 1.6px solid var(--ink);
+  border-radius: var(--r-hand-soft);
+  padding: var(--s6);
+}
+
+.compare .before {
+  background: var(--wash-pom);
+  transform: rotate(-0.7deg);
+  box-shadow: 4px 5px 0 rgb(143 44 35 / 0.12);
+}
+
+.compare .after {
+  background: var(--wash-pis);
+  transform: rotate(0.6deg);
+  box-shadow: 4px 5px 0 rgb(85 98 59 / 0.12);
+}
+
+.compare h3 {
+  font-size: 18px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  margin-bottom: var(--s3);
+}
+
+.compare .after h3 {
+  color: var(--pistachio-deep);
+  font-weight: 700;
+}
+
+.compare ul {
+  padding-inline-start: 1.2em;
+  font-size: 15.5px;
+  margin: 0;
+}
+
+.compare li {
+  margin-block: var(--s2);
+}
+
+/* key facts strip on the case study */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s3);
+  margin-block: var(--s8);
+}
+
+.facts div {
+  background: var(--card);
+  border: 1.5px dashed var(--line-strong);
+  border-radius: var(--r-hand-soft);
+  padding: var(--s3) var(--s4);
+}
+
+.facts dt {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.facts dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+}
+
+/* section label used inside essays */
+.essay .kicker {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--pistachio-deep);
+  margin-bottom: var(--s2);
+}
+
+.essay .more {
+  margin-top: var(--s4);
+}
+
+.essay .note {
+  max-width: 66ch;
+}
+
+/* related reading grid at page end */
+.related {
+  border-top: 1.5px dashed var(--line-strong);
+  margin-top: var(--s16);
+  padding-top: var(--s8);
+}
+
+.related h2 {
+  font-size: 24px;
+  margin-bottom: var(--s4);
+}
+
+.related ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.related li + li {
+  margin-top: var(--s3);
+}
+
+.related a {
+  display: grid;
+  gap: 2px;
+  text-decoration: none;
+}
+
+.related .r-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 16.5px;
+}
+
+.related a:hover .r-title {
+  color: var(--pomegranate);
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+
+.related .r-desc {
+  color: var(--ink-soft);
+  font-size: 14px;
+  max-width: 58ch;
+}
+
+.related .r-tag {
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+/* --------------------------------------------------------------------------
    footer
    -------------------------------------------------------------------------- */
 

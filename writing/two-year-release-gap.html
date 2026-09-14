@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A Two-Year Release Gap Is Not a Mobile Problem — Meysam Valiolahi</title>
+    <meta
+      name="description"
+      content="A team that cannot release is not necessarily facing only a deployment problem. Shipping is an organisational capability — lessons from a two-year Android release gap."
+    />
+    <link rel="canonical" href="https://mvaliolahi.ir/writing/two-year-release-gap.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="A Two-Year Release Gap Is Not a Mobile Problem" />
+    <meta property="og:description" content="Shipping is an organisational capability. Inability to release reflects ownership, architecture, process, risk management, and structure." />
+    <meta property="og:url" content="https://mvaliolahi.ir/writing/two-year-release-gap.html" />
+    <meta property="og:image" content="https://mvaliolahi.ir/books/leading-effectice-engineering-teams/images/meysam_2025.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="A Two-Year Release Gap Is Not a Mobile Problem" />
+    <meta name="twitter:description" content="A team that cannot release is not necessarily facing only a deployment problem." />
+    <meta name="theme-color" content="#faf6ec" />
+    <link rel="stylesheet" href="../assets/site.css" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "A Two-Year Release Gap Is Not a Mobile Problem",
+        "description": "Shipping is an organisational capability. Inability to release reflects ownership, architecture, process, risk management, and structure.",
+        "author": { "@type": "Person", "name": "Meysam Valiolahi", "url": "https://mvaliolahi.ir/" },
+        "articleSection": "Delivery",
+        "mainEntityOfPage": "https://mvaliolahi.ir/writing/two-year-release-gap.html"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="../">Meysam Valiolahi<span>.</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../#about">about</a>
+        <a href="../experience.html">experience</a>
+        <a href="../perspective.html">thinking</a>
+        <a href="../writing/" aria-current="page">writing</a>
+        <a href="../books/">books <span lang="fa" dir="rtl">/ کتاب‌ها</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <nav class="breadcrumb wrap" aria-label="Breadcrumb">
+        <ul>
+          <li><a href="../">Home</a> <span aria-hidden="true">/</span></li>
+          <li><a href="./">Writing</a> <span aria-hidden="true">/</span></li>
+          <li><span aria-current="page">The two-year release gap</span></li>
+        </ul>
+      </nav>
+
+      <article class="essay">
+        <p class="kicker">delivery</p>
+        <h1>A two-year release gap is not a mobile problem</h1>
+        <p class="standfirst">
+          Fact: when I joined Sheypoor, the Android application had gone
+          roughly two years without a production release. Interpretation,
+          formed later: that was never really a mobile engineering problem. It
+          was a loss of organisational ability to ship — expressed, visibly,
+          through one app store listing.
+        </p>
+        <div class="byline">
+          <span class="sticker sticker--pom">delivery</span>
+          <span>based on the <a href="../case-studies/sheypoor.html">Sheypoor case study</a></span>
+        </div>
+
+        <h2>The fact, and the trap inside it</h2>
+        <p>
+          Let me keep the fact clean: the application had not shipped to
+          production in about two years. Work on it had continued the entire
+          time — development, refactoring, improvement. None of it had
+          converged into a production release.
+        </p>
+        <p>
+          The trap is to read that fact as a mobile team failure. Two years is
+          too long for any single-discipline explanation. If a team can build
+          for two years but cannot ship for two years, the inability to ship
+          lives somewhere larger than the team.
+        </p>
+
+        <h2>What "shipping" actually is</h2>
+        <p>
+          Releasing an app looks like a deployment step. It isn't. A release
+          is the moment an organisation's ownership, architecture, process,
+          risk management, and structure all have to agree — simultaneously —
+          that something is safe to hand to users.
+        </p>
+        <p>
+          When a release doesn't happen, the blocker is usually one of those
+          five, and rarely the deployment tooling:
+        </p>
+        <ul>
+          <li><strong>Ownership</strong> — nobody can say "yes, this is ready", with the authority to mean it.</li>
+          <li><strong>Architecture</strong> — the system has grown to where every release risks everything, so every release waits.</li>
+          <li><strong>Process</strong> — the path to production requires more coordination than the organisation can sustain.</li>
+          <li><strong>Risk management</strong> — the cost of a bad release feels higher than the cost of no release, so the org quietly chooses stale over sorry.</li>
+          <li><strong>Structure</strong> — the teams whose approval a release needs don't share priorities, or a calendar, or a definition of done.</li>
+        </ul>
+
+        <h2>What happened when we shipped</h2>
+        <p>
+          Fixing push notifications required a new Android release — which
+          made the gap impossible to route around. Shipping it became one of
+          the hardest and most valuable things the engineering team did during
+          my time there. It was a team achievement; my role was to make it the
+          priority, clear the path, and keep the organisation patient while
+          difficult work happened.
+        </p>
+        <p>
+          The outcome that mattered wasn't the version number. It was that the
+          organisation regained the ability to ship. The cycle corrected: the
+          app moved to roughly monthly releases, and teams could release
+          independently and regularly. Once shipping became routine, the
+          organisation stopped treating releases as events and started
+          treating them as work.
+        </p>
+
+        <div class="lesson-box">
+          A two-year release gap is not just a mobile engineering problem. It
+          is an organisational capability problem.
+        </div>
+
+        <h2>How to diagnose your own release gap</h2>
+        <p>
+          If your team's last release is further away than anyone would like,
+          the useful question is not "how do we push this release out" but
+          "which of the five is broken". In my experience the answer is
+          usually structure before tooling: who owns the release decision,
+          and does the path to production match the org chart or fight it.
+        </p>
+        <p>
+          I would now treat release cadence as a leadership instrument the
+          way finance treats cash flow: a slow cadence is not itself the
+          disease, but it is almost always a symptom of something that
+          deserves leadership attention.
+        </p>
+
+        <div class="related">
+          <h2>Related</h2>
+          <ul>
+            <li>
+              <a href="../case-studies/sheypoor.html">
+                <span class="r-title">Case study: We didn't have a traffic problem</span>
+                <span class="r-desc">The full story — including how the release gap was found and closed.</span>
+                <span class="r-tag">Case study</span>
+              </a>
+            </li>
+            <li>
+              <a href="team-structure-is-architecture.html">
+                <span class="r-title">Your Team Structure Is Part of Your Architecture</span>
+                <span class="r-desc">Why the path to production usually fights or follows the org chart.</span>
+                <span class="r-tag">Organisation design</span>
+              </a>
+            </li>
+            <li>
+              <a href="technical-debt-becomes-business-debt.html">
+                <span class="r-title">When Technical Debt Becomes Business Debt</span>
+                <span class="r-desc">Speed — the fourth crossing where debt reaches the business.</span>
+                <span class="r-tag">Lessons from practice</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 Meysam Valiolahi — built by hand, no frameworks.</p>
+      <div>
+        <a href="mailto:mvaliolahi@gmail.com">Email ↗</a> &nbsp;/&nbsp;
+        <a href="https://www.linkedin.com/in/meysam-valiolahi/">LinkedIn ↗</a> &nbsp;/&nbsp;
+        <a href="https://t.me/m_valiolahi">Telegram ↗</a>
+      </div>
+    </footer>
+  </body>
+</html>

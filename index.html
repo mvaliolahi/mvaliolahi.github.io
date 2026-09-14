@@ -6,14 +6,14 @@
     <title>Meysam Valiolahi — engineering executive</title>
     <meta
       name="description"
-      content="Meysam Valiolahi. Engineering executive, former VP and CTO. More than 15 years across software, systems, and engineering leadership."
+      content="Meysam Valiolahi builds software, then the teams that build it. 15+ years of engineering leadership — writing about engineering leadership, technical organisations, and the decisions that connect them."
     />
     <link rel="canonical" href="https://mvaliolahi.ir/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Meysam Valiolahi — engineering executive" />
     <meta
       property="og:description"
-      content="I've spent 15+ years building software and the teams behind it — from developer to VP and CTO. I also brought Leading Effective Engineering Teams to Persian readers."
+      content="I build software, then the teams that build it. Writing about engineering leadership, technical organisations, and the decisions that connect them."
     />
     <meta property="og:url" content="https://mvaliolahi.ir/" />
     <meta
@@ -23,15 +23,37 @@
     <meta name="theme-color" content="#faf6ec" />
     <link rel="stylesheet" href="assets/site.css" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Meysam Valiolahi",
+        "url": "https://mvaliolahi.ir/",
+        "jobTitle": "Engineering Executive",
+        "description": "Engineering leader with 15+ years across software, systems, and engineering leadership. Writes about engineering leadership, technical organisations, and the decisions that connect them.",
+        "knowsAbout": [
+          "Engineering leadership",
+          "Organisation design",
+          "Software architecture",
+          "Technical strategy",
+          "Engineering management"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/meysam-valiolahi/",
+          "https://t.me/m_valiolahi"
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <a class="wordmark" href="./">Meysam Valiolahi<span>.</span></a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="./" aria-current="page">profile</a>
+        <a href="./#about" aria-current="page">about</a>
         <a href="experience.html">experience</a>
-        <a href="perspective.html">perspective</a>
+        <a href="perspective.html">thinking</a>
+        <a href="writing/">writing</a>
         <a href="books/">books <span lang="fa" dir="rtl">/ کتاب‌ها</span></a>
       </nav>
     </header>
@@ -55,9 +77,16 @@
             Karnameh — <strong>and I still believe the org chart is a
             system</strong>, just like the architecture.
           </p>
+          <p class="lead" style="font-size: 17px">
+            I write about engineering leadership, technical organisations, and
+            the decisions that connect them. Most of what I write comes from
+            building and rebuilding engineering teams in real businesses —
+            including the things that worked, the things that didn't, and the
+            decisions I'd make differently today.
+          </p>
           <div class="hero-actions">
-            <a class="button" href="experience.html">See the career</a>
-            <a class="text-link" href="books/">or skip to the book</a>
+            <a class="button" href="writing/">Read the writing</a>
+            <a class="text-link" href="case-studies/sheypoor.html">or start with the case study</a>
           </div>
         </div>
         <div class="hero-figure">
@@ -94,44 +123,126 @@
         </div>
       </section>
 
-      <!-- ================================================== work index -->
-      <section class="stripe stripe--deep" aria-labelledby="work-title">
+      <!-- ============================================== how i think -->
+      <section class="stripe stripe--deep" aria-labelledby="think-title">
         <div class="wrap">
           <div class="stripe-head">
-            <h2 id="work-title">Three chapters I'm proud of</h2>
-            <p class="eyebrow">the short version</p>
+            <h2 id="think-title">How I think</h2>
+            <a class="text-link" href="perspective.html">all five principles</a>
+          </div>
+          <div class="principle">
+            <span class="number" aria-hidden="true">01</span>
+            <div>
+              <h2>Team boundaries have architectural consequences.</h2>
+              <p>Teams don't just maintain architecture — the way teams are structured often shapes it.</p>
+              <p class="more"><a class="text-link" href="writing/team-structure-is-architecture.html">the essay</a></p>
+            </div>
+          </div>
+          <div class="principle">
+            <span class="number" aria-hidden="true">02</span>
+            <div>
+              <h2>Shipping is an organisational capability.</h2>
+              <p>A team that cannot release is not necessarily facing only a deployment problem.</p>
+              <p class="more"><a class="text-link" href="writing/two-year-release-gap.html">the essay</a></p>
+            </div>
+          </div>
+          <p style="margin-top: 32px">
+            <a class="button button--ghost" href="perspective.html">Read how I think</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================================== featured case study -->
+      <section class="stripe" aria-labelledby="case-title">
+        <div class="wrap">
+          <div class="stripe-head">
+            <h2 id="case-title">Featured case study</h2>
+            <p class="eyebrow">evidence, not claims</p>
+          </div>
+          <div class="decision" style="margin-block: 0">
+            <p class="what">
+              We didn't have a traffic problem. We had a systems problem.
+            </p>
+            <p class="why">
+              Diagnosing a prolonged traffic decline, replacing a custom SSR
+              implementation, restoring the ability to ship the Android app —
+              and rebuilding engineering ownership along the way.
+            </p>
+            <p style="margin-top: var(--s4)">
+              <a class="button" href="case-studies/sheypoor.html">Read the case study</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ selected writing -->
+      <section class="stripe stripe--deep" aria-labelledby="writing-title">
+        <div class="wrap">
+          <div class="stripe-head">
+            <h2 id="writing-title">Selected writing</h2>
+            <a class="text-link" href="writing/">all writing</a>
+          </div>
+          <ul class="essay-index">
+            <li>
+              <a href="writing/technical-debt-becomes-business-debt.html">
+                <h3>When Technical Debt Becomes Business Debt</h3>
+                <span class="cat">lessons from practice</span>
+                <p>Debt stops being an engineering concern the moment it affects acquisition, conversion, reliability, or speed.</p>
+              </a>
+            </li>
+            <li>
+              <a href="writing/we-didnt-need-an-ssr-framework.html">
+                <h3>We Didn't Need to Build an SSR Framework</h3>
+                <span class="cat">architecture</span>
+                <p>Ownership is valuable when it creates differentiation — a distraction when it doesn't.</p>
+              </a>
+            </li>
+            <li>
+              <a href="writing/team-structure-is-architecture.html">
+                <h3>Your Team Structure Is Part of Your Architecture</h3>
+                <span class="cat">organisation design</span>
+                <p>Team boundaries shape ownership, communication — and eventually the system itself.</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================================ experience index -->
+      <section class="stripe" aria-labelledby="work-title">
+        <div class="wrap">
+          <div class="stripe-head">
+            <h2 id="work-title">Where the lessons come from</h2>
+            <a class="text-link" href="experience.html">the full record</a>
           </div>
           <ul class="work-index">
             <li>
-              <a href="experience.html#sheypoor">
+              <a href="case-studies/sheypoor.html">
                 <h3>Sheypoor</h3>
-                <p class="what">Rebuilt the engineering organisation behind a 5M-user marketplace — halting a 50% traffic decline and speeding delivery 30%.</p>
-                <span class="when">2024–2025 · VP of Engineering</span>
+                <p class="what">VP of Engineering. Two critical problems — declining traffic and no ability to ship — both resolved before I left.</p>
+                <span class="when">2024–2025</span>
               </a>
             </li>
             <li>
               <a href="experience.html#takhfifan">
                 <h3>Takhfifan</h3>
-                <p class="what">Owned technology and product as one organisation — shipped our own payment platform.</p>
-                <span class="when">2022–2024 · CTO</span>
+                <p class="what">CTO. Owned technology and product as one organisation — shipped our own payment platform.</p>
+                <span class="when">2022–2024</span>
               </a>
             </li>
             <li>
               <a href="experience.html#karnameh">
                 <h3>Karnameh</h3>
-                <p class="what">Built an independent engineering organisation from scratch — separating from Divar with zero service disruption.</p>
-              <span class="when">2021–2022 · Technical VP</span>
+                <p class="what">Technical VP. Built an independent engineering organisation from scratch, separated from Divar with zero service disruption.</p>
+                <span class="when">2021–2022</span>
               </a>
             </li>
           </ul>
-          <p style="margin-top: 24px">
-            <a class="text-link" href="experience.html">the full record, warts and all</a>
-          </p>
         </div>
       </section>
 
-      <!-- ================================================ book + principles -->
-      <div class="stripe">
+      <!-- ================================================ books -->
+      <section class="stripe stripe--deep" aria-labelledby="books-title">
         <div class="wrap">
           <div class="book-feature wobble">
             <img
@@ -144,7 +255,7 @@
             />
             <div>
               <p class="eyebrow">translation · 317 pages · pdf</p>
-              <h3>Leading Effective Engineering Teams — in Persian</h3>
+              <h3 id="books-title">Leading Effective Engineering Teams — in Persian</h3>
               <p class="meta">by Addy Osmani · translated by me</p>
               <p style="margin-bottom: 20px">
                 Ten years of Google engineering leadership, made readable for
@@ -155,31 +266,36 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- ================================================== perspective strip -->
-      <section class="stripe stripe--deep" aria-labelledby="think-title">
-        <div class="wrap">
+      <!-- ================================================== about -->
+      <section class="stripe" id="about" aria-labelledby="about-title">
+        <div class="wrap" style="max-width: 62ch">
           <div class="stripe-head">
-            <h2 id="think-title">How I think</h2>
-            <a class="text-link" href="perspective.html">all five principles</a>
+            <h2 id="about-title">About me</h2>
+            <p class="eyebrow">the short version</p>
           </div>
-          <div class="principle">
-            <span class="number" aria-hidden="true">01</span>
-            <div>
-              <h2>Design the organisation as carefully as the software.</h2>
-              <p>Team boundaries have architectural consequences. A brilliant system still struggles when every change needs five teams to coordinate.</p>
-            </div>
-          </div>
-          <div class="principle">
-            <span class="number" aria-hidden="true">02</span>
-            <div>
-              <h2>Connect technical work to the business.</h2>
-              <p>The question is never "is this clever?" — it's what a decision enables: a reliable transaction, a faster journey, a product the business can sustain.</p>
-            </div>
-          </div>
-          <p style="margin-top: 32px">
-            <a class="button button--ghost" href="perspective.html">Read my perspective</a>
+          <p>
+            I'm an engineering executive based in Tehran. Since 2010 I've
+            worked across software, systems, and engineering leadership —
+            developer, lead, CTO, VP — at companies including Sheypoor,
+            Takhfifan, and Karnameh.
+          </p>
+          <p>
+            What I care about professionally: engineering organisations that
+            ship reliably without heroics; technical decisions that are
+            connected to the business; organisation design treated as part of
+            the architecture, not beside it.
+          </p>
+          <p>
+            What I write about: the decisions that connect engineering and
+            organisation — documented with their context, trade-offs, and the
+            things I'd do differently.
+          </p>
+          <p class="note" style="margin-top: var(--s4)">
+            Longer conversations: <a href="mailto:mvaliolahi@gmail.com">Email ↗</a>,
+            <a href="https://www.linkedin.com/in/meysam-valiolahi/">LinkedIn ↗</a>, or
+            <a href="https://t.me/m_valiolahi">Telegram ↗</a>.
           </p>
         </div>
       </section>

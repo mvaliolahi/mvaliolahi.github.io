@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Perspective — Meysam Valiolahi</title>
+    <title>How I Think — Meysam Valiolahi</title>
     <meta
       name="description"
-      content="Meysam Valiolahi on engineering leadership: organisational design, legacy modernisation, accountability, and connecting technology to business outcomes."
+      content="Five working principles on engineering leadership and technical organisations — team boundaries as architecture, build versus adopt, shipping as a capability, and more. Each backed by real experience."
     />
     <link rel="canonical" href="https://mvaliolahi.ir/perspective.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Perspective — Meysam Valiolahi" />
+    <meta property="og:title" content="How I Think — Meysam Valiolahi" />
     <meta
       property="og:description"
-      content="Five working principles on engineering leadership — organisational design, business connection, modernisation, accountability, and knowledge circulation."
+      content="Five working principles on engineering leadership and technical organisations — each earned on real projects, each linked to the evidence."
     />
     <meta property="og:url" content="https://mvaliolahi.ir/perspective.html" />
     <meta
@@ -23,26 +23,38 @@
     <meta name="theme-color" content="#faf6ec" />
     <link rel="stylesheet" href="assets/site.css" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mvaliolahi.ir/" },
+          { "@type": "ListItem", "position": 2, "name": "How I Think", "item": "https://mvaliolahi.ir/perspective.html" }
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <a class="wordmark" href="./">Meysam Valiolahi<span>.</span></a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="./">profile</a>
+        <a href="./#about">about</a>
         <a href="experience.html">experience</a>
-        <a href="perspective.html" aria-current="page">perspective</a>
+        <a href="perspective.html" aria-current="page">thinking</a>
+        <a href="writing/">writing</a>
         <a href="books/">books <span lang="fa" dir="rtl">/ کتاب‌ها</span></a>
       </nav>
     </header>
     <main id="main">
       <div class="page-head">
-        <p class="eyebrow">field notes on leading engineers</p>
-        <h1>How I think<span class="doodle">.</span></h1>
+        <p class="eyebrow">how I think</p>
+        <h1>Principles, with the scars attached<span class="doodle">.</span></h1>
         <p class="intro">
-          Principles aren't trophies — they're scars. Each of these was earned
-          the hard way across fifteen years of building software and the
-          organisations behind it.
+          I write about engineering leadership, technical organisations, and
+          the decisions that connect them. These five principles are the
+          shortest version of what I've learned — each earned on real projects,
+          each linked to the story and evidence behind it.
         </p>
       </div>
 
@@ -50,16 +62,15 @@
         <section class="principle" aria-labelledby="p1">
           <span class="number" aria-hidden="true">01</span>
           <div>
-            <h2 id="p1">Design the organisation as carefully as the software.</h2>
+            <h2 id="p1">Team boundaries have architectural consequences.</h2>
             <p>
-              Team boundaries, ownership, and decision-making have architectural
-              consequences. A well-designed system still struggles when every
-              change requires coordination across too many teams.
+              Teams don't just maintain architecture. The way teams are
+              structured often shapes it — interfaces harden where
+              organisations harden, and problems slow down at every seam where
+              ownership is ambiguous.
             </p>
-            <p>
-              So I work on both at once: autonomous teams, explicit
-              responsibilities, fewer dependencies. Organisational design is
-              part of the engineering work — not an HR side-quest.
+            <p class="more">
+              <a class="text-link" href="writing/team-structure-is-architecture.html">the essay</a>
             </p>
           </div>
         </section>
@@ -67,15 +78,16 @@
         <section class="principle" aria-labelledby="p2">
           <span class="number" aria-hidden="true">02</span>
           <div>
-            <h2 id="p2">Connect technical work to the business.</h2>
+            <h2 id="p2">Don't build what the ecosystem can build better.</h2>
             <p>
-              Engineering is an engine of growth. The important question is what
-              a technical decision <em>enables</em>: a reliable transaction, a
-              faster customer journey, or a new product the business can sustain.
+              Engineering ownership is valuable when it creates
+              differentiation. Otherwise, it can become a distraction from the
+              product. We are not in the business of building an SSR
+              framework — or any infrastructure a mature ecosystem already
+              provides.
             </p>
-            <p>
-              I make the trade-offs visible and ground the roadmap in outcomes.
-              If a refactor can't tell me what it buys the business, it waits.
+            <p class="more">
+              <a class="text-link" href="writing/we-didnt-need-an-ssr-framework.html">the essay</a>
             </p>
           </div>
         </section>
@@ -83,16 +95,16 @@
         <section class="principle" aria-labelledby="p3">
           <span class="number" aria-hidden="true">03</span>
           <div>
-            <h2 id="p3">Modernise with a clear reason.</h2>
+            <h2 id="p3">Shipping is an organisational capability.</h2>
             <p>
-              Legacy systems carry business history as well as technical debt.
-              Modernisation needs a purpose: removing a bottleneck, restoring
-              reliability, or making future change easier.
+              A team that cannot release is not necessarily facing only a
+              deployment problem. Inability to ship usually reflects ownership,
+              architecture, process, risk management, or structure — and it
+              deserves leadership attention as a symptom, not just a mobile
+              team's backlog item.
             </p>
-            <p>
-              From critical payment flows to a complete infrastructure
-              separation, my aim is always the same: a simpler, more resilient
-              system that supports the next stage of the business.
+            <p class="more">
+              <a class="text-link" href="writing/two-year-release-gap.html">the essay</a>
             </p>
           </div>
         </section>
@@ -100,15 +112,15 @@
         <section class="principle" aria-labelledby="p4">
           <span class="number" aria-hidden="true">04</span>
           <div>
-            <h2 id="p4">Make accountability a shared practice.</h2>
+            <h2 id="p4">Technical problems don't always need technical solutions.</h2>
             <p>
-              Predictable delivery depends on clear goals, honest feedback, and
-              an environment where people can grow. Hiring standards, mentorship,
-              and performance expectations belong in the same conversation.
+              Sometimes the fastest way to improve engineering output is to
+              change who owns what. The hardest debugging I've done has been
+              organisational: finding where ownership went shared, and making
+              it explicit again.
             </p>
-            <p>
-              Clear ownership plus structured feedback lets teams decide with
-              confidence — and actually understand the impact of their work.
+            <p class="more">
+              <a class="text-link" href="case-studies/sheypoor.html#organisation">the evidence</a>
             </p>
           </div>
         </section>
@@ -116,22 +128,24 @@
         <section class="principle" aria-labelledby="p5">
           <span class="number" aria-hidden="true">05</span>
           <div>
-            <h2 id="p5">Keep useful knowledge in circulation.</h2>
+            <h2 id="p5">Build software, then build the organisation that can build it sustainably.</h2>
             <p>
-              Translating Addy Osmani's <em>Leading Effective Engineering
-              Teams</em> into Persian is another way to contribute to engineering
-              practice. Lessons become more useful when more people can work
-              with them.
+              This one is the through-line of the whole site. Technical wins
+              that depend on one person's heroics don't survive that person's
+              departure. The durable version of any technical achievement is
+              the organisation that can repeat it without you.
             </p>
             <p class="more">
-              <a class="text-link" href="books/leading-effectice-engineering-teams/">explore the Persian translation</a>
+              <a class="text-link" href="case-studies/sheypoor.html">read the case study where this played out</a>
             </p>
           </div>
         </section>
 
-        <p class="note" style="margin-top: 48px">
+        <p class="note" style="margin-top: var(--s12)">
           These principles come straight from the work documented in my
-          <a href="experience.html">professional experience</a>.
+          <a href="experience.html">professional experience</a> — and the
+          counterweight to them is the honest list in
+          <a href="differently.html">things I'd do differently</a>.
         </p>
       </div>
     </main>

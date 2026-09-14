@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>We Didn't Need to Build an SSR Framework — Meysam Valiolahi</title>
+    <meta
+      name="description"
+      content="Build versus adopt: engineering ownership is valuable when it creates differentiation, and a distraction when it doesn't. A judgment call from a real frontend rewrite."
+    />
+    <link rel="canonical" href="https://mvaliolahi.ir/writing/we-didnt-need-an-ssr-framework.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="We Didn't Need to Build an SSR Framework" />
+    <meta property="og:description" content="Our competitive advantage wasn't building an SSR framework. Our job was to create value for users." />
+    <meta property="og:url" content="https://mvaliolahi.ir/writing/we-didnt-need-an-ssr-framework.html" />
+    <meta property="og:image" content="https://mvaliolahi.ir/books/leading-effectice-engineering-teams/images/meysam_2025.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="We Didn't Need to Build an SSR Framework" />
+    <meta name="twitter:description" content="Build versus adopt: ownership is valuable when it creates differentiation, and a distraction when it doesn't." />
+    <meta name="theme-color" content="#faf6ec" />
+    <link rel="stylesheet" href="../assets/site.css" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "We Didn't Need to Build an SSR Framework",
+        "description": "Our competitive advantage wasn't building an SSR framework. Our job was to create value for users.",
+        "author": { "@type": "Person", "name": "Meysam Valiolahi", "url": "https://mvaliolahi.ir/" },
+        "articleSection": "Architecture",
+        "mainEntityOfPage": "https://mvaliolahi.ir/writing/we-didnt-need-an-ssr-framework.html"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="../">Meysam Valiolahi<span>.</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../#about">about</a>
+        <a href="../experience.html">experience</a>
+        <a href="../perspective.html">thinking</a>
+        <a href="../writing/" aria-current="page">writing</a>
+        <a href="../books/">books <span lang="fa" dir="rtl">/ کتاب‌ها</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <nav class="breadcrumb wrap" aria-label="Breadcrumb">
+        <ul>
+          <li><a href="../">Home</a> <span aria-hidden="true">/</span></li>
+          <li><a href="./">Writing</a> <span aria-hidden="true">/</span></li>
+          <li><span aria-current="page">We didn't need to build an SSR framework</span></li>
+        </ul>
+      </nav>
+
+      <article class="essay">
+        <p class="kicker">architecture</p>
+        <h1>We didn't need to build an SSR framework</h1>
+        <p class="standfirst">
+          When I joined Sheypoor, the frontend was built on a custom
+          server-side rendering framework that had been under development for
+          more than a year. It was also contributing significantly to an SEO
+          problem that was draining the business. We decided to stop investing
+          in it and rewrite the affected pages with Next.js. This essay is not
+          about Next.js. It's about the judgment call underneath that decision.
+        </p>
+        <div class="byline">
+          <span class="sticker sticker--tum">architecture</span>
+          <span>based on the <a href="../case-studies/sheypoor.html">Sheypoor case study</a></span>
+        </div>
+
+        <h2>A year of investment, and the problem was still there</h2>
+        <p>
+          The custom SSR framework wasn't a bad idea, and it wasn't badly
+          built. That's what makes this story worth telling. Someone looked at
+          the product's needs, decided existing tools weren't enough, and
+          committed real effort — more than a year of it — to building
+          something tailored.
+        </p>
+        <p>
+          By the time I arrived, the evidence had turned: the implementation
+          was contributing significantly to the SEO problems that were part of
+          a significant, ongoing traffic decline. The framework had become
+          both the infrastructure and the problem.
+        </p>
+
+        <h2>The question ownership has to answer</h2>
+        <p>
+          Engineering ownership is valuable when it creates differentiation.
+          If owning a piece of the stack makes your product meaningfully
+          better — faster, more reliable, harder to copy — then build it,
+          maintain it, and be proud of it.
+        </p>
+        <p>
+          But ownership for its own sake becomes a distraction from the
+          product. Nobody chooses your classifieds platform because its
+          rendering layer is bespoke. The test I now apply:
+        </p>
+        <ul>
+          <li>Does owning this create differentiation a customer can feel?</li>
+          <li>Is the ecosystem's solution actually insufficient for our case — or just unfashionable?</li>
+          <li>What is the ongoing tax of ownership, and who pays it?</li>
+        </ul>
+        <p>
+          For an SSR framework at a marketplace, every answer pointed the same
+          direction. We are not in the business of building an SSR framework.
+          Our job is to create value for customers, not to reinvent
+          infrastructure that a mature open-source ecosystem already provides
+          better than we ever would.
+        </p>
+
+        <div class="decision">
+          <p class="what">
+            Stop investing in the custom framework. Rewrite the affected SSR
+            pages with Next.js.
+          </p>
+          <p class="why">
+            <strong>Why:</strong> more than a year of investment had not
+            resolved the SEO contribution, and continuing meant choosing
+            sunk-cost pride over the product. The rewrite was a team effort
+            across Frontend and Core; roughly 20+ days after launch, Core Web
+            Vitals were passing across the board.
+          </p>
+        </div>
+
+        <h2>What this is not</h2>
+        <p>
+          This is not an argument that Next.js is better than whatever you've
+          built. If your custom layer passes the three questions above — if it
+          differentiates and the ecosystem genuinely can't serve you — then
+          owning it is correct, and adopting a framework might be the
+          distraction. The mistake isn't building; it's building without
+          periodically re-asking why.
+        </p>
+        <p>
+          It's also not an argument that the original decision was foolish.
+          Contexts change. What was defensible in year one of a framework can
+          be indefensible in year two, once the evidence has had time to
+          accumulate. Good engineering judgment includes knowing when the
+          ground has shifted under an old decision — and acting on it without
+          defending the sunk cost.
+        </p>
+
+        <div class="lesson-box">
+          Build what differentiates you. Adopt what merely powers you. And
+          re-ask the question every year, because the answer moves.
+        </div>
+
+        <h2>The harder part: retiring your own work</h2>
+        <p>
+          The technically interesting part of this decision was small. The
+          hard part was human: the framework represented more than a year of
+          somebody's best work. Retiring it meant telling colleagues — some of
+          whom built it — that the organisation was moving on. That deserved
+          care, and it got care: the rewrite was framed as what it was, a
+          business decision about where the organisation's finite ownership
+          budget should go, not a verdict on anyone's craftsmanship.
+        </p>
+        <p>
+          Leaders ask teams to make judgment calls like this all the time.
+          It goes better when the organisation can tell the difference between
+          "this code failed" and "this code no longer justifies its cost".
+        </p>
+
+        <div class="related">
+          <h2>Related</h2>
+          <ul>
+            <li>
+              <a href="../case-studies/sheypoor.html">
+                <span class="r-title">Case study: We didn't have a traffic problem</span>
+                <span class="r-desc">The full context — investigation, the SSR decision, and what came after.</span>
+                <span class="r-tag">Case study</span>
+              </a>
+            </li>
+            <li>
+              <a href="technical-debt-becomes-business-debt.html">
+                <span class="r-title">When Technical Debt Becomes Business Debt</span>
+                <span class="r-desc">Why this decision belonged in the business conversation, not just the engineering one.</span>
+                <span class="r-tag">Lessons from practice</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 Meysam Valiolahi — built by hand, no frameworks.</p>
+      <div>
+        <a href="mailto:mvaliolahi@gmail.com">Email ↗</a> &nbsp;/&nbsp;
+        <a href="https://www.linkedin.com/in/meysam-valiolahi/">LinkedIn ↗</a> &nbsp;/&nbsp;
+        <a href="https://t.me/m_valiolahi">Telegram ↗</a>
+      </div>
+    </footer>
+  </body>
+</html>

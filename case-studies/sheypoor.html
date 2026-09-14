@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>We Didn't Have a Traffic Problem. We Had a Systems Problem. — Meysam Valiolahi</title>
+    <meta
+      name="description"
+      content="A Sheypoor case study: diagnosing a prolonged traffic decline, replacing a custom SSR implementation, restoring the ability to ship the Android app, and rebuilding engineering ownership along the way."
+    />
+    <link rel="canonical" href="https://mvaliolahi.ir/case-studies/sheypoor.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="We Didn't Have a Traffic Problem. We Had a Systems Problem." />
+    <meta
+      property="og:description"
+      content="Diagnosing a prolonged traffic decline, replacing a custom SSR implementation, restoring the ability to ship, and rebuilding engineering ownership — a Sheypoor case study."
+    />
+    <meta property="og:url" content="https://mvaliolahi.ir/case-studies/sheypoor.html" />
+    <meta
+      property="og:image"
+      content="https://mvaliolahi.ir/books/leading-effectice-engineering-teams/images/meysam_2025.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="We Didn't Have a Traffic Problem. We Had a Systems Problem." />
+    <meta
+      name="twitter:description"
+      content="A Sheypoor case study: technical debt, the decision to stop building an SSR framework, and regaining the ability to ship."
+    />
+    <meta name="theme-color" content="#faf6ec" />
+    <link rel="stylesheet" href="../assets/site.css" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "We Didn't Have a Traffic Problem. We Had a Systems Problem.",
+        "description": "A Sheypoor case study: diagnosing a prolonged traffic decline, replacing a custom SSR implementation, restoring the ability to ship the Android app, and rebuilding engineering ownership.",
+        "author": {
+          "@type": "Person",
+          "name": "Meysam Valiolahi",
+          "url": "https://mvaliolahi.ir/"
+        },
+        "articleSection": "Case Studies",
+        "about": "Engineering leadership, technical debt, organisation design",
+        "mainEntityOfPage": "https://mvaliolahi.ir/case-studies/sheypoor.html"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="../">Meysam Valiolahi<span>.</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../#about">about</a>
+        <a href="../experience.html">experience</a>
+        <a href="../perspective.html">thinking</a>
+        <a href="../writing/">writing</a>
+        <a href="../books/">books <span lang="fa" dir="rtl">/ کتاب‌ها</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <nav class="breadcrumb wrap" aria-label="Breadcrumb">
+        <ul>
+          <li><a href="../">Home</a> <span aria-hidden="true">/</span></li>
+          <li><a href="../writing/">Case studies</a> <span aria-hidden="true">/</span></li>
+          <li><span aria-current="page">Sheypoor</span></li>
+        </ul>
+      </nav>
+
+      <article class="essay">
+        <p class="kicker">case study</p>
+        <h1>We didn't have a traffic problem. We had a systems problem.</h1>
+        <p class="standfirst">
+          When I joined Sheypoor, traffic had been declining for roughly eight
+          months and nobody could say exactly why. This is the story of what we
+          found underneath — and of the organisational work that turned out to
+          be inseparable from the technical work.
+        </p>
+        <div class="byline">
+          <span class="sticker sticker--pom">Sheypoor · VP of Engineering</span>
+          <span>2024–2025 · Tehran</span>
+        </div>
+
+        <dl class="facts">
+          <div><dt>Role</dt><dd>VP of Engineering, reporting to the CEO</dd></div>
+          <div><dt>Organisation</dt><dd>Roughly 65 engineers, seven teams</dd></div>
+          <div><dt>Stack</dt><dd>PHP · Python · Golang</dd></div>
+        </dl>
+        <p class="note">Some figures are approximate or expressed as ranges to preserve confidentiality.</p>
+
+        <h2 id="context">Context</h2>
+        <p>
+          Sheypoor is one of Iran's largest classifieds platforms, serving more
+          than five million monthly users. The engineering organisation was
+          around 65 people, structured into Core, Monetization, DevOps,
+          Infrastructure, QA, Mobile, and Frontend. Each team had a lead; the
+          leads reported to me; I reported to the CEO. There was no separate
+          CTO — the role I stepped into carried both the technical and the
+          organisational responsibility.
+        </p>
+        <p>
+          The business was not in a strong position when I arrived. A
+          significant traffic decline had started roughly eight months earlier
+          and was still happening. The root cause was unclear — and that
+          uncertainty shaped everything that followed.
+        </p>
+
+        <h2 id="two-problems">Two critical problems</h2>
+        <div class="pull-quote">
+          When I joined, there were two critical problems: traffic and
+          application releases. Before I left, both had been resolved.
+        </div>
+        <p>
+          The first problem was visible in every business review: acquisition
+          was sliding, and with it the top of the funnel for the whole company.
+        </p>
+        <p>
+          The second was quieter but, in retrospect, just as serious. The
+          Android application had gone roughly two years without a production
+          release. Development and refactoring work had continued the whole
+          time — but that work had never turned into a reliable release cycle.
+          The organisation could build, but it could not ship.
+        </p>
+
+        <h2 id="known-unknown">What we knew — and what we didn't</h2>
+        <p>
+          It would be tidy to say we had a hypothesis. We didn't. What we had
+          was a set of instruments and a lot of open questions.
+        </p>
+        <ul>
+          <li>
+            <strong>We knew</strong> traffic was declining and had been for
+            roughly eight months.
+          </li>
+          <li>
+            <strong>We didn't know</strong> whether the cause was primarily
+            SEO, product experience, technical performance, or some
+            combination.
+          </li>
+          <li>
+            <strong>We knew</strong> the Android app had not shipped to
+            production in about two years.
+          </li>
+          <li>
+            <strong>We didn't know</strong> how much that was a mobile
+            engineering problem and how much it was an organisational one.
+          </li>
+        </ul>
+        <p>
+          That distinction — between what the data said and what it meant —
+          took most of the work.
+        </p>
+
+        <h2 id="investigation">Investigation</h2>
+        <p>
+          We investigated across three sources: Google Search Console, application
+          logs, and ranking data. None of them alone told the story; together,
+          patterns started to appear.
+        </p>
+        <p>
+          What made this slow — and worth doing carefully — is that the trail
+          crossed every team boundary: search visibility, web performance,
+          mobile, backend services. A problem that shows up as "traffic" in a
+          board deck rarely lives in one team's codebase.
+        </p>
+
+        <h2 id="root-causes">Root causes</h2>
+        <p>The investigation eventually pointed to several distinct problems:</p>
+        <ul>
+          <li>SEO problems, tied significantly to the frontend's server-side rendering.</li>
+          <li>Deep-link problems that broke the path from notification or web into the app.</li>
+          <li>Push notification problems that needed a new Android release to fix.</li>
+          <li>A frontend rewrite — a custom SSR framework — that had been under development for more than a year without resolving the underlying issues.</li>
+          <li>The Android application's inability to release reliably.</li>
+        </ul>
+        <p>
+          Individually, each looked like a discrete technical issue. Together
+          they described a system that had accumulated debt faster than it had
+          accumulated the ability to pay it down.
+        </p>
+
+        <h2 id="ssr-decision">The SSR decision</h2>
+        <div class="decision">
+          <p class="what">
+            Stop investing in our custom SSR framework. Rewrite the affected
+            SSR pages with Next.js.
+          </p>
+          <p class="why">
+            <strong>Why:</strong> the framework had consumed more than a year
+            of effort and was still contributing significantly to the SEO
+            problem. Our competitive advantage was not building rendering
+            infrastructure — it was the product. The ecosystem already solves
+            this problem better than we ever would.
+          </p>
+        </div>
+        <p>
+          The principle behind the decision matters more than the technology
+          choice: <strong>we are not in the business of building an SSR
+          framework.</strong> Our job is to create value for customers, not to
+          reinvent infrastructure that a mature open-source ecosystem can
+          provide. Engineering ownership is valuable when it creates
+          differentiation; owning infrastructure for its own sake becomes a
+          distraction from the product.
+        </p>
+        <p>
+          The rewrite was a team effort across Frontend and Core. Roughly
+          20+ days after the new frontend launched, Core Web Vitals were
+          passing across the board. Conversion improved, and the SEO issues
+          that had been bleeding acquisition were addressed.
+        </p>
+
+        <h2 id="deeplinks">Deep links: a conversion problem in backend clothing</h2>
+        <p>
+          Deep-link issues were another contributor to the conversion problem
+          — users arriving from links were not landing where they should.
+          These were resolved through changes to backend services.
+        </p>
+        <div class="lesson-box">
+          What appeared to be a business conversion problem required
+          investigation across multiple technical boundaries. The org chart
+          said "mobile", "web", "backend". The problem refused to.
+        </div>
+
+        <h2 id="android">The Android release: regaining the ability to ship</h2>
+        <p>
+          Fixing push notifications required a new Android release — which
+          collided with an awkward fact: the app had not had a production
+          release in roughly two years. Work had continued on it constantly,
+          but somehow never converged into a releasable state.
+        </p>
+        <p>
+          Shipping that release became one of the hardest and most valuable
+          things the engineering team did during my time there. It was a team
+          achievement — my role was to make it the priority, clear the path,
+          and keep the organisation patient while the mobile team did
+          difficult work.
+        </p>
+        <p>
+          The important outcome was not "we released a new version". It was
+          that the organisation regained the ability to ship. After that
+          release, the cycle was corrected: the app moved to roughly monthly
+          releases, and teams could release independently and regularly.
+        </p>
+        <p>
+          In retrospect, I see the two-year gap as more than a mobile
+          engineering problem. A team that cannot release is rarely facing
+          only a deployment problem — it is facing an organisational capability
+          problem, expressed through deployment.
+        </p>
+
+        <h2 id="organisation">The organisational changes</h2>
+        <p>
+          Alongside the technical decisions, the organisation itself changed:
+        </p>
+        <ul>
+          <li>Team structure changes, so ownership matched the problems we needed solved.</li>
+          <li>Hiring new people, and replacing people where necessary to address current problems.</li>
+          <li>Clearer ownership across systems and product areas.</li>
+          <li>More active participation from teams in technical roadmaps and engineering improvements.</li>
+          <li>Independent, regular releases as the norm rather than the exception.</li>
+        </ul>
+        <p>
+          My role in all of this was facilitating and leading the team:
+          helping identify the real problems, helping choose appropriate
+          technology, making architecture decisions with the teams, hiring and
+          replacing where necessary — building an organisation capable of
+          solving its own problems, not an organisation that waits for its
+          leadership to solve them.
+        </p>
+
+        <h2 id="outcomes">Outcomes</h2>
+        <div class="compare">
+          <div class="before">
+            <h3>When I joined</h3>
+            <ul>
+              <li>Traffic declining for roughly eight months, cause unclear.</li>
+              <li>Android app: roughly two years without a production release.</li>
+              <li>A custom SSR framework consuming effort without resolving SEO.</li>
+              <li>Ownership blurred across team boundaries.</li>
+            </ul>
+          </div>
+          <div class="after">
+            <h3>When I left</h3>
+            <ul>
+              <li>Both critical problems resolved.</li>
+              <li>Regular, independent releases — roughly monthly.</li>
+              <li>Core Web Vitals green across the board; conversion improved.</li>
+              <li>Clearer responsibilities and stronger ownership.</li>
+            </ul>
+          </div>
+        </div>
+        <p>
+          Teams participated actively in technical roadmaps, and the system
+          could be improved continuously instead of episodically.
+        </p>
+
+        <h2 id="differently">What I would do differently</h2>
+        <p>
+          I would have made the organisational decisions more decisively.
+        </p>
+        <p>
+          In retrospect, I would have made structural decisions earlier,
+          clarified roles earlier, made the interaction model with stakeholders
+          clearer, and established clearer organisational boundaries sooner.
+          Some technical problems were visible before the organisational
+          structure around them was clear — and I under-estimated how much
+          that ambiguity slowed the technical work itself.
+        </p>
+        <div class="lesson-box">
+          Team boundaries, ownership, and communication models are not
+          management details that sit beside technology. They are part of the
+          system.
+        </div>
+
+        <h2 id="lessons">Broader lessons</h2>
+        <p>
+          I've written the transferable versions of these lessons separately:
+        </p>
+        <div class="related">
+          <h2>Related writing</h2>
+          <ul>
+            <li>
+              <a href="../writing/technical-debt-becomes-business-debt.html">
+                <span class="r-title">When Technical Debt Becomes Business Debt</span>
+                <span class="r-desc">Debt stops being an engineering concern the moment it affects acquisition, conversion, reliability, or speed.</span>
+                <span class="r-tag">Lessons from practice</span>
+              </a>
+            </li>
+            <li>
+              <a href="../writing/we-didnt-need-an-ssr-framework.html">
+                <span class="r-title">We Didn't Need to Build an SSR Framework</span>
+                <span class="r-desc">Build versus adopt: ownership is valuable when it creates differentiation, and a distraction when it doesn't.</span>
+                <span class="r-tag">Architecture</span>
+              </a>
+            </li>
+            <li>
+              <a href="../writing/two-year-release-gap.html">
+                <span class="r-title">A Two-Year Release Gap Is Not a Mobile Problem</span>
+                <span class="r-desc">Shipping is an organisational capability — inability to release reflects ownership, architecture, process, and structure.</span>
+                <span class="r-tag">Delivery</span>
+              </a>
+            </li>
+            <li>
+              <a href="../writing/team-structure-is-architecture.html">
+                <span class="r-title">Your Team Structure Is Part of Your Architecture</span>
+                <span class="r-desc">Team boundaries shape ownership, communication, and eventually the system itself.</span>
+                <span class="r-tag">Organisation design</span>
+              </a>
+            </li>
+          </ul>
+          <p class="note" style="margin-top: var(--s4)">
+            The principles behind these decisions are collected on
+            <a href="../perspective.html">how I think</a>; the honest list of
+            things I'd approach differently lives in
+            <a href="../differently.html">things I'd do differently</a>.
+          </p>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 Meysam Valiolahi — built by hand, no frameworks.</p>
+      <div>
+        <a href="mailto:mvaliolahi@gmail.com">Email ↗</a> &nbsp;/&nbsp;
+        <a href="https://www.linkedin.com/in/meysam-valiolahi/">LinkedIn ↗</a> &nbsp;/&nbsp;
+        <a href="https://t.me/m_valiolahi">Telegram ↗</a>
+      </div>
+    </footer>
+  </body>
+</html>
